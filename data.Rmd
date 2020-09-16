@@ -36,11 +36,11 @@ Cleaning the data will be a time-consuming effort, but the good news is that you
 
 # Data Development Task List
 
-Here are some of the necessary details for each step of this process. Please refer to Dr. Love's materials in the Project A [Examples](examples.html) section for more information.
+Here are some of the necessary details for each step of this process. Please refer to Dr. Love's materials in the Project A [Examples](examples.html) section for more help.
 
-## Task A. **Ingest the County Health Rankings Data into a tibble
+## Task A. **Ingest the CHR Data into a tibble**
 
-1. Remove the first row of the `.csv` file to leave the second row as the top row before ingesting the data into R (I suggest you do this in Excel or perhaps Google Sheets, and then resave a new version of the file without this top row as a .csv before ingesting into R)
+1. Remove the first row of the available `.csv` file to leave the second row as the top row before ingesting the data into R (I suggest you do this in Excel or perhaps Google Sheets, and then resave a new version of the file without this top row as a .csv before ingesting into R)
 
 2. Read the resulting `.csv` file into R, and call the resulting tibble **chr_raw**. Be sure that this goes as smoothly as possible.
 
@@ -77,15 +77,36 @@ Here you will need to identify variables from the data for your selected sample 
 - the `state`, which will be a multi-categorical (with 4-6 categories) variable
 - and a total of five variables selected from the 107 variables in the CHR data set that are listed as `vXXX_rawvalue` (note: to select the entire group of 107 variables, you might try `select(ends_with("rawvalue"))` as part of a pipe of the data.)
 
+### The 107 variables you must select 5 from
+
 The [2020 CHR Analytic Data Documentation](https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf), and [2020 Data Dictionary](https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf) PDF files are crucial here, as those are the ones that explain what the available variables mean, and how they should be labeled. 
+
+You must select your five variables from these 107 variables in the raw (.csv) data file. We show them here in the order in which they appear in the raw file. The listing "v001" in this table actually refers to the variable named "**v001_rawvalue**".
+
+
+"v001", "v002", "v036", "v042", "v037", "v009", "v011", "v133", "v070", "v132", 
+"v049", "v134", "v045", "v014", "v085", "v004", "v088", "v062", "v005", "v050", 
+"v155", "v021", "v069", "v023", "v024", "v044", "v082", "v140", "v043", "v135", 
+"v125", "v124", "v136", "v067", "v137", "v147", "v127", "v128", "v129", "v144", 
+"v145", "v060", "v061", "v139", "v083", "v138", "v039", "v143", "v003", "v122", 
+"v131", "v149", "v159", "v160", "v063", "v065", "v141", "v142", "v015", "v161", 
+"v148", "v158", "v156", "v153", "v154", "v051", "v052", "v053", "v054", "v055", 
+"v081", "v080", "v056", "v126", "v059", "v057", "v058", "v104", "v099", "v100", 
+"v101", "v010", "v150", "v109", "v018", "v019", "v103", "v116", "v117", "v118", 
+"v120", "v119", "v106", "v105", "v107", "v123", "v008", "v013", "v016", "v017", 
+"v025", "v026", "v027", "v031", "v032", "v035", "v097"
+
+For example, `v001_rawvalue` shows the raw values for the premature death measure. If you select this variable, it is up to you to use the documentation in the two PDF files I have linked to, as well as the information on the County Health Rankings website, to get a reasonable understanding of what the variable measures, and how it was collected.
 
 ### Notes
 
-1. As mentioned above, your five variables must be five different variables selected from the 107 variables in the CHR data set that are listed as `vXXX_rawvalue`.
+1. As mentioned above, your five variables must be five different variables selected from the 107 variables in the CHR data set that are listed as `vXXX_rawvalue`. Some of the variables in that set of 107 are better choices than others: not all of them will meet our specifications.
 
 2. Each of the five variables you select must have data for at least 75% of the counties in each state you plan to study. This is something you will have to check on, in R, and you'll have to present the code, and demonstrate with complete English sentences that you've verified this to be true for your selections.
 
-3. Across your complete set of 4-6 selected states, the raw versions of each of your five selected variables must have at least 10 distinct non-missing values. Again, you'll need to show R code to do this checking, and demonstrate with complete English sentences that you have checked this to be true.
+3. Each of the five variables you select must be of some actual interest on its own, in terms of providing useful information about a feature of the county that might relate to the health outcomes you are studying.
+
+4. Across your complete set of 4-6 selected states, the raw versions of each of your five selected variables must have at least 10 distinct non-missing values. Again, you'll need to show R code to do this checking, and demonstrate with complete English sentences that you have checked this to be true.
 
 ## Task D. **Create Categorical Variables**
 
@@ -123,15 +144,27 @@ All of these variables should be renamed (and also have clean_names applied) so 
 2. If data for some counties are missing in the raw data for one or more of your variables, then these data should be indicated as missing (using NA) in the tibble.
 3. There is no need to set a seed in this process, as you are not doing anything that involves selecting a random sample.
 
-## Task F. **Saving and Summarizing Your Tibble**
+## Task F. **Provide a Codebook for Your Tibble**
+
+Next, you will provide a codebook as part of your R Markdown file (and HTML/PDF output) that specifies the name of each variable in your tibble and its definition. 
+
+### Notes
+
+1. Use the [2020 CHR Analytic Data Documentation](https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf) to guide your description of the variables you've chosen. 
+
+2. The [2020 Data Dictionary](https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf) provides information on each variable, but you will want to write more than it provides for your key variables, using the [Data Documentation](https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf) to indicate the roles of your chosen variables in the health rankings, and provide context.
+
+3. Be sure to include a description for each of the 10 variables in your final tibble, not just the ones that you wind up using in your analyses.
+
+4. Include a description of what the cutpoints are for the two categorical variables you create, and specify how those cutpoints were chosen. 
+
+## Task G. **Saving and Summarizing Your Tibble**
 
 1. **Save the Tibble**: You should provide code that saves your tibble as an R data set into your R Project, with the file name **chr_2020_YOURNAME.Rds**. If you like, you can store this `.Rds` file in a `data` subdirectory within your R Project.
 
 2. **Print the Tibble**: You will then prove that your tibble is in fact a tibble and not just a data frame by listing it, so that the first 10 rows are printed, and the columns are appropriately labeled.
 
-3. **Provide a Codebook**: You will then provide a codebook as a table in your R Markdown file (and HTML/PDF output) that specifies the name of each variable in your tibble and its definition.
-
-4. **Numerical Summaries**: You will then demonstrate main numerical summaries from the tibble by running the following summaries.
+3. **Numerical Summaries**: You will then demonstrate main numerical summaries from the tibble by running the following summaries.
 
 - `Hmisc::describe` on the whole tibble (which is what you'll do for the proposal).
 - In the project report, there are two additional requirements. 

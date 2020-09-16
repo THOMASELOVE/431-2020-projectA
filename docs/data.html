@@ -325,7 +325,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>This page was last updated: 2020-09-16 14:40:17.</p>
+<p>This page was last updated: 2020-09-16 18:00:35.</p>
 <div id="what-data-will-i-use" class="section level1">
 <h1>What Data Will I Use?</h1>
 <p>The data set for Project A is now available. The data are the 2020 version of the analytic data from County Health Rankings. In much of what follows, we will abbreviate County Health Rankings as <strong>CHR</strong>.</p>
@@ -353,11 +353,11 @@ $(document).ready(function () {
 </div>
 <div id="data-development-task-list" class="section level1">
 <h1>Data Development Task List</h1>
-<p>Here are some of the necessary details for each step of this process. Please refer to Dr. Love’s materials in the Project A <a href="examples.html">Examples</a> section for more information.</p>
-<div id="task-a.-ingest-the-county-health-rankings-data-into-a-tibble" class="section level2">
-<h2>Task A. **Ingest the County Health Rankings Data into a tibble</h2>
+<p>Here are some of the necessary details for each step of this process. Please refer to Dr. Love’s materials in the Project A <a href="examples.html">Examples</a> section for more help.</p>
+<div id="task-a.-ingest-the-chr-data-into-a-tibble" class="section level2">
+<h2>Task A. <strong>Ingest the CHR Data into a tibble</strong></h2>
 <ol style="list-style-type: decimal">
-<li><p>Remove the first row of the <code>.csv</code> file to leave the second row as the top row before ingesting the data into R (I suggest you do this in Excel or perhaps Google Sheets, and then resave a new version of the file without this top row as a .csv before ingesting into R)</p></li>
+<li><p>Remove the first row of the available <code>.csv</code> file to leave the second row as the top row before ingesting the data into R (I suggest you do this in Excel or perhaps Google Sheets, and then resave a new version of the file without this top row as a .csv before ingesting into R)</p></li>
 <li><p>Read the resulting <code>.csv</code> file into R, and call the resulting tibble <strong>chr_raw</strong>. Be sure that this goes as smoothly as possible.</p></li>
 </ol>
 </div>
@@ -396,12 +396,19 @@ $(document).ready(function () {
 <li>the <code>state</code>, which will be a multi-categorical (with 4-6 categories) variable</li>
 <li>and a total of five variables selected from the 107 variables in the CHR data set that are listed as <code>vXXX_rawvalue</code> (note: to select the entire group of 107 variables, you might try <code>select(ends_with("rawvalue"))</code> as part of a pipe of the data.)</li>
 </ul>
+<div id="the-107-variables-you-must-select-5-from" class="section level3">
+<h3>The 107 variables you must select 5 from</h3>
 <p>The <a href="https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf">2020 CHR Analytic Data Documentation</a>, and <a href="https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf">2020 Data Dictionary</a> PDF files are crucial here, as those are the ones that explain what the available variables mean, and how they should be labeled.</p>
+<p>You must select your five variables from these 107 variables in the raw (.csv) data file. We show them here in the order in which they appear in the raw file. The listing “v001” in this table actually refers to the variable named “<strong>v001_rawvalue</strong>”.</p>
+<p>“v001”, “v002”, “v036”, “v042”, “v037”, “v009”, “v011”, “v133”, “v070”, “v132”, “v049”, “v134”, “v045”, “v014”, “v085”, “v004”, “v088”, “v062”, “v005”, “v050”, “v155”, “v021”, “v069”, “v023”, “v024”, “v044”, “v082”, “v140”, “v043”, “v135”, “v125”, “v124”, “v136”, “v067”, “v137”, “v147”, “v127”, “v128”, “v129”, “v144”, “v145”, “v060”, “v061”, “v139”, “v083”, “v138”, “v039”, “v143”, “v003”, “v122”, “v131”, “v149”, “v159”, “v160”, “v063”, “v065”, “v141”, “v142”, “v015”, “v161”, “v148”, “v158”, “v156”, “v153”, “v154”, “v051”, “v052”, “v053”, “v054”, “v055”, “v081”, “v080”, “v056”, “v126”, “v059”, “v057”, “v058”, “v104”, “v099”, “v100”, “v101”, “v010”, “v150”, “v109”, “v018”, “v019”, “v103”, “v116”, “v117”, “v118”, “v120”, “v119”, “v106”, “v105”, “v107”, “v123”, “v008”, “v013”, “v016”, “v017”, “v025”, “v026”, “v027”, “v031”, “v032”, “v035”, “v097”</p>
+<p>For example, <code>v001_rawvalue</code> shows the raw values for the premature death measure. If you select this variable, it is up to you to use the documentation in the two PDF files I have linked to, as well as the information on the County Health Rankings website, to get a reasonable understanding of what the variable measures, and how it was collected.</p>
+</div>
 <div id="notes-1" class="section level3">
 <h3>Notes</h3>
 <ol style="list-style-type: decimal">
-<li><p>As mentioned above, your five variables must be five different variables selected from the 107 variables in the CHR data set that are listed as <code>vXXX_rawvalue</code>.</p></li>
+<li><p>As mentioned above, your five variables must be five different variables selected from the 107 variables in the CHR data set that are listed as <code>vXXX_rawvalue</code>. Some of the variables in that set of 107 are better choices than others: not all of them will meet our specifications.</p></li>
 <li><p>Each of the five variables you select must have data for at least 75% of the counties in each state you plan to study. This is something you will have to check on, in R, and you’ll have to present the code, and demonstrate with complete English sentences that you’ve verified this to be true for your selections.</p></li>
+<li><p>Each of the five variables you select must be of some actual interest on its own, in terms of providing useful information about a feature of the county that might relate to the health outcomes you are studying.</p></li>
 <li><p>Across your complete set of 4-6 selected states, the raw versions of each of your five selected variables must have at least 10 distinct non-missing values. Again, you’ll need to show R code to do this checking, and demonstrate with complete English sentences that you have checked this to be true.</p></li>
 </ol>
 </div>
@@ -447,12 +454,24 @@ $(document).ready(function () {
 </ol>
 </div>
 </div>
-<div id="task-f.-saving-and-summarizing-your-tibble" class="section level2">
-<h2>Task F. <strong>Saving and Summarizing Your Tibble</strong></h2>
+<div id="task-f.-provide-a-codebook-for-your-tibble" class="section level2">
+<h2>Task F. <strong>Provide a Codebook for Your Tibble</strong></h2>
+<p>Next, you will provide a codebook as part of your R Markdown file (and HTML/PDF output) that specifies the name of each variable in your tibble and its definition.</p>
+<div id="notes-3" class="section level3">
+<h3>Notes</h3>
+<ol style="list-style-type: decimal">
+<li><p>Use the <a href="https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf">2020 CHR Analytic Data Documentation</a> to guide your description of the variables you’ve chosen.</p></li>
+<li><p>The <a href="https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf">2020 Data Dictionary</a> provides information on each variable, but you will want to write more than it provides for your key variables, using the <a href="https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf">Data Documentation</a> to indicate the roles of your chosen variables in the health rankings, and provide context.</p></li>
+<li><p>Be sure to include a description for each of the 10 variables in your final tibble, not just the ones that you wind up using in your analyses.</p></li>
+<li><p>Include a description of what the cutpoints are for the two categorical variables you create, and specify how those cutpoints were chosen.</p></li>
+</ol>
+</div>
+</div>
+<div id="task-g.-saving-and-summarizing-your-tibble" class="section level2">
+<h2>Task G. <strong>Saving and Summarizing Your Tibble</strong></h2>
 <ol style="list-style-type: decimal">
 <li><p><strong>Save the Tibble</strong>: You should provide code that saves your tibble as an R data set into your R Project, with the file name <strong>chr_2020_YOURNAME.Rds</strong>. If you like, you can store this <code>.Rds</code> file in a <code>data</code> subdirectory within your R Project.</p></li>
 <li><p><strong>Print the Tibble</strong>: You will then prove that your tibble is in fact a tibble and not just a data frame by listing it, so that the first 10 rows are printed, and the columns are appropriately labeled.</p></li>
-<li><p><strong>Provide a Codebook</strong>: You will then provide a codebook as a table in your R Markdown file (and HTML/PDF output) that specifies the name of each variable in your tibble and its definition.</p></li>
 <li><p><strong>Numerical Summaries</strong>: You will then demonstrate main numerical summaries from the tibble by running the following summaries.</p></li>
 </ol>
 <ul>

@@ -11,7 +11,7 @@
 
 
 
-<title>Project A Proposal</title>
+<title>Project A Proposal due Friday 2020-10-02 at NOON</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -320,36 +320,57 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Project A Proposal</h1>
+<h1 class="title toc-ignore">Project A Proposal due Friday 2020-10-02 at NOON</h1>
 
 </div>
 
 
-<p>This page was last updated: 2020-09-16 14:40:24.</p>
-<div id="your-proposal-will-be-due-2020-10-02-at-noon" class="section level1">
-<h1>Your “Proposal” will be due 2020-10-02 at Noon</h1>
-<p>You will submit a short document to Canvas providing the answers to a series of questions related to your Data Development work. The TAs and Dr. Love will review these results to ensure that your proposed plan meets the requirements for this project, and either approve the plan, or request changes. If changes are requested, you’ll have 48 hours to make those changes and resubmit until your plan is approved.</p>
-<div id="working-alone-vs.-working-in-a-group" class="section level2">
-<h2>Working Alone vs. Working in a Group</h2>
-<p>You may work alone on this project, or in a group of two people. If you decide to work in a pair, you will specify that in the “proposal” stage, and you’re stuck with that choice for the rest of Project A.</p>
-</div>
-</div>
-<div id="your-project-proposal-due-2020-10-02-at-noon" class="section level1">
-<h1>Your Project “Proposal” due 2020-10-02 at noon</h1>
-<p>Your project proposal requires you to create the tibble you plan to use and then send (via Canvas) an R Markdown file and HTML (or PDF) result that contains:</p>
+<p>This page was last updated: 2020-09-16 18:00:42.</p>
+<p>You will submit a short document to Canvas providing the answers to a series of questions related to your Data Development work.</p>
+<ul>
+<li>You will need to have completed most (if not all) of the Tasks listed on <a href="data.html">the Data page</a> in order to finish the proposal, but none of the work described on <a href="analysis.html">the Analysis page</a>.</li>
+</ul>
+<div id="proposal-requirements" class="section level3">
+<h3>Proposal Requirements</h3>
+<p>Your project proposal requires you to create the tibble you plan to use and then send (via Canvas) an R Markdown file and HTML (or PDF) result that contains these five elements:</p>
 <ol style="list-style-type: decimal">
-<li>A list of the states you chose, and the number of counties you are therefore studying.</li>
-<li>A list of the five variables (including their original raw names and your renamed versions) you are studying, with a clear indication of how you’re planning to create the categories in variables 4 and 5.</li>
-<li>A print-out of your tibble, to prove it is a tibble.</li>
-<li>The <code>Hmisc::describe</code> result for your tibble</li>
+<li>A sentence or two (perhaps accompanied by a small table of R results) specifying the 4-6 states you chose, and the number of counties you are studying in total and within each state. In an additional sentence or two, provide some motivation for why you chose those states.</li>
+<li>A list of the five variables (including their original raw names and your renamed versions) you are studying, with a clear indication of the cutpoints you chose to create the binary categories out of variable 4 and the multiple categories out of variable 5. Think of this as an early version of what will eventually become your codebook. For each variable, provide a sentence describing your motivation for why this variable was interesting to you.</li>
+<li>A print-out of your cleaned up <code>chr_2020</code> tibble, to prove it is a tibble, with 10 columns (variables) and 200-400 rows (counties). No writing is required here - just the result of the code.</li>
+<li>The <code>Hmisc::describe</code> result for your <code>chr_2020</code> tibble. As in element 3, code alone is fine for this element.</li>
+<li>In a paragraph, describe the most challenging (or difficult) part of completing the work so far, and how you were able to overcome whatever it was that was difficult.</li>
 </ol>
-<p>Be sure that your proposal includes your name as the author in R Markdown.</p>
-<p>Dr. Love will provide an R Markdown template for the project “proposal” document to you.</p>
-<div id="working-with-a-partner" class="section level2">
-<h2>Working with a partner?</h2>
-<p>Be sure that your proposal includes your name and that of your partner (if you have one.) If you are working with a partner, exactly one of you should submit the materials, and the other partner should submit a text document (Word or PDF is fine) that reads</p>
-<p>“My name is [YOUR NAME]. I am working on Project A with [INSERT FULL NAME OF YOUR PARTNER], and they will submit the materials for the proposal.”</p>
 </div>
+<div id="notes" class="section level3">
+<h3>Notes</h3>
+<ol style="list-style-type: decimal">
+<li><p>Dr. Love will provide a sample project “proposal” document to you as part of his <a href="examples.html">Examples</a>.</p></li>
+<li><p>Be sure that your proposal includes your name as the author in R Markdown.</p></li>
+<li><p>Should you decide to work in a pair on this project, you will specify that in the “proposal” stage, and you’re stuck with that choice for the rest of Project A. Be sure that your proposal includes your name and that of your partner (if you have one.) If you are working with a partner, exactly one of you should submit the materials, and the other partner should submit a text document (Word or PDF is fine) that reads: “My name is [YOUR NAME]. I am working on Project A with [INSERT FULL NAME OF YOUR PARTNER], and they will submit the materials for the proposal.”</p></li>
+</ol>
+</div>
+<div id="submission-and-grading" class="section level3">
+<h3>Submission and Grading</h3>
+<ul>
+<li>After the deadline, the TAs and Dr. Love will review your submissions quickly to ensure that your proposed plan meets the requirements for this project, and either approve the plan, or request changes.</li>
+<li>If changes are requested, you’ll have a very short time window (at most 24 hours) to make those changes and resubmit until your plan is, eventually, approved.</li>
+</ul>
+</div>
+<div id="grading" class="section level3">
+<h3>Grading</h3>
+<ul>
+<li>Project A is graded on a scale from 0 to 100, although I expect the highest grade to be close to 95.</li>
+<li>The proposal will be 25% of the Project A grade, so the maximum score for the proposal is 25 points.</li>
+<li>Successful completion of the proposal by the deadline attempt will receive full credit (25 points.)
+<ul>
+<li>Proposals that require revisions after the deadline will lose 10% of the possible credit for each revision.</li>
+</ul></li>
+<li><strong>Please</strong> meet the deadline, and don’t wait until the last minute to do the work.
+<ul>
+<li>Late work on the projects (proposal or final submission) will be <strong>severely</strong> penalized, much more so than late work on labs. A late proposal will not score more than 20 points out of 25 and may score appreciably lower depending on the situation.</li>
+<li>To encourage an early start, proposals submitted <strong>prior to Sunday 2020-09-27 at noon</strong> will be reviewed quickly by Dr. Love and the TAs, and if a redo is required, you’ll hear back quickly enough that you should be able to accomplish it before the 2020-10-02 deadline, and thus still have a chance to earn full credit.</li>
+</ul></li>
+</ul>
 </div>
 
 <p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
