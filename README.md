@@ -1,2 +1,5 @@
-# 431-2020-projectA
-Repository for 431 Project A in Fall 2020
+# 431 Project A
+
+This repo holds materials for Project A for 431.
+
+Visit https://thomaselove.github.io/431/ for links to all other materials.

@@ -1,0 +1,14 @@
+---
+title: "Examples"
+---
+
+This page was last updated: `r Sys.time()`.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+By 2020-09-22, Dr. Love will provide an example, written in R Markdown for the project "proposal", as well as an (incomplete but useful) sample project report, in each case using data from a  previous year's County Health Rankings.
+
+
+

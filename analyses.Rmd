@@ -1,0 +1,28 @@
+---
+title: "Analytic Tasks"
+---
+
+This page was last updated: `r Sys.time()`.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+Using the tibble you've developed, you will then create the remainder of your report by performing the four analytic tasks specified below.
+
+1. **Simple Linear Regression Model**: Provide evidence regarding the question of how well variable 1 can be predicted using one of the other quantitative variables (your choice of either variable 2 or variable 3). This should include a report on the effectiveness of a simple linear regression model, and an appropriate plot of the relationship. Important steps to include in your analytic report are:
+
+- A visualization of the relationship between the outcome (Y-axis) and the predictor (X-axis) and a written description of what you learn about the association (which should include its direction, shape and strength along with identification of any substantial outliers). The addition of a loess smooth and/or a fit line to the plot should be important.
+- A specification of any transformations you choose to apply to the X or Y variable in order to obtain a better fit with a simple linear regression, along with some justification for the choice (or for the decision not to apply a transformation.)
+- A specification of the actual prediction equation created by the model, and an interpretation of what the coefficients mean, and how they should be interpreted in light of their estimated standard errors.
+- A specification of summary measures of goodness of fit, at a minimum the residual standard deviation (sigma) and the r-squared value. The quality of fit is not a consideration in the grading of this work.
+- Identification of the two counties (by name and state) where the model is least successful at predicting the outcome.
+
+All of these elements should include R code that creates the information you need, and complete English sentences that interpret those results.
+
+2. **Comparing Groups on a Quantitative Outcome using Independent Samples**: Provide evidence regarding the question of how well your variable 1 can be predicted using one of your categorical variables (you may select either the binary (variable 4) or the multi-categorical (variable 5) here.) This should include a report on the effectiveness of the resulting model following the suggestions from the first task, and an appropriate plot of the relationship between your quantitative and categorical variable. Consider a transformation of the quantitative outcome should that prove useful, and be sure to provide evidence regarding the impact of the assumptions of a linear model on your conclusions.
+
+3. **Adjusting for the impact of a categorical variable on your linear model**: Provide evidence regarding the question of how well variable 1 can be predicted using one of the other quantitative variables (your choice of either variable 2 or variable 3 and this doesn't have to be the same one you chose in task 1) after adjusting for the effect of one of your categorical variables (variable 4 or 5.) This should include a report on the effectiveness of the resulting model following the suggestions from the first task, and an appropriate plot of the relationship that shows the impact of the categorical variable through an attractive plot that helps us understand the inter-relationship of the three variables under study.
+
+4. **Adjusting for the impact of state on your linear model**: Provide evidence regarding the question of how well variable 1 can be predicted using one of the other quantitative variables (your choice of either variable 2 or variable 3) after adjusting for the `state` effect. This should include a report on the effectiveness of the resulting model following the suggestions from the first task, and an appropriate plot of the relationship that shows the impact of the `state` through an attractive plot that helps us understand the inter-relationship of the three variables under study.
+
