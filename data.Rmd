@@ -10,11 +10,11 @@ knitr::opts_chunk$set(comment = NA)
 
 # What Data Will I Use?
 
-The data set for Project A is now available. The data are the 2020 version of the analytic data from County Health Rankings. In much of what follows, we will abbreviate County Health Rankings as CHR.
+The data set for Project A is now available. The data are the 2020 version of the analytic data from County Health Rankings. In much of what follows, we will abbreviate County Health Rankings as **CHR**.
 
 The data are gathered at [the County Health Rankings Data & Documentation site](https://www.countyhealthrankings.org/explore-health-rankings/rankings-data-documentation).
 
-The key links for you are provided as part of the National Data & Documentation section of that site for the **2020 County Health Rankings**. Do not use data from previous editions of the CHR, and do not use the trends data in this project. 
+The key links for you are provided as part of the National Data & Documentation section of that site for the **2020 County Health Rankings**. Do not use data from previous editions of the CHR, and do not use the trends data available on their website for this project. 
 
 Specifically, you'll need three files:
 
@@ -24,48 +24,38 @@ Specifically, you'll need three files:
 
 These files are also available in the [data folder for Project A](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/data/README.md) on Github, and in the Google Drive folder Dr. Love has shared with you. 
 
-# Cleaning the Data
+# Developing the Data: Overview
 
-Cleaning the data will be a time-consuming effort but you can begin it immediately. Before you complete any of the required analyses in R, you'll need to complete the following steps.
+Cleaning the data will be a time-consuming effort, but the good news is that you can begin it immediately. Before you complete any of the required analyses in R, you'll need to complete the following steps.
 
-1. Remove the first row of the csv file to leave the second row as the top row before ingesting the data into R (I suggest you do this in Excel or perhaps Google Sheets, and then resave a new version of the file without this top row as a .csv before ingesting into R)
-2. Select variables (there will be 3 required variables, plus 5 additional variables you select, for a total of 8) that you actually need to use and rename them into useful formats instead of the default names provided by CHR.
-3. Filter to the subset of observations (counties) that you actually want to study, and note that each of these counties will have to have a `county_ranked` value of 1, and in addition, you will be working with a subset of the available `state`s, which should include the 88 counties of Ohio, plus counties from 3-5 other states you will select. 
-4. Make some transformations to obtain categorical versions (factors) of selected variables and add them to your tibble.
+1. Ingest the data into R after removing the top row from the .csv outside of R.
+2. Select variables (at this stage, there will be 3 required variables, plus 5 additional variables you select, for a total of 8) that you actually need to use and rename them into useful formats instead of the default names provided by CHR. Save the result in your analytic tibble, which should be called **chr_2020**.
+3. Filter your **chr_2020** file so that it contains only the subset of observations (counties) that you actually want to study. Note that each of these counties will have to have a `county_ranked` value of 1. You will be working with a subset of the available `state`s, which should include the 88 counties of Ohio, plus counties from 3-5 other states you will select.  
+4. Make some transformations to obtain categorical versions (factors) of two of your selected variables and add them to your **chr_2020** tibble. Retain the original versions of those two variables, too, so that you wind up with 10 variables in total.
+5. Your final **chr_2020** tibble will therefore contain 200-400 rows (counties) and 10 variables. Eventually, you'll save this tibble as an R data frame.
 
 # Data Development Task List
 
-1. **Identify a set of 4-6 states, containing 200-400 counties.** This must include the 88 counties of Ohio, and all of the counties within a subset of 3-5 additional states in the US, not including the District of Columbia, and also not including the five states (Connecticut, Delaware, Hawaii, New Hampshire and Rhode Island) with fewer than 12 counties. The number of counties associated with each state (specified using its two-letter postal abbreviation code) is listed below, for your convenience.
+Here are some of the necessary details for each step of this process. Please refer to Dr. Love's materials in the Project A [Examples](examples.html) section for more information.
 
-## States with fewer than 12 counties are italicized below.
+## Task A. **Ingest the County Health Rankings Data into a tibble
 
-`state` | Name | Counties | |  `state` | Name | Counties 
-:---: | ----: | ---: | --: |  :---: | ---: | ----: 
-`AK` | Alaska | 25 |  | `AL` | Alabama | 67
-`AR` | Arkansas | 75 |  | `AZ` | Arizona | 15
-`CA` | California | 58 |  | `CO` | Colorado | 60
-`CT` | *Connecticut* | *8* |  | `DE` | *Delaware* | *3*
-`FL` | Florida | 67 |  | `GA` | Georgia | 159
-`HI` | *Hawaii* | *4* |  | `IA` | Iowa | 99
-`ID` | Idaho | 42 |  | `IL` | Illinois | 102
-`IN` | Indiana | 92 |  | `KS` | Kansas | 104
-`KY` | Kentucky | 120 |  | `LA` | Louisiana | 64
-`MA` | Massachusetts | 14 |  | `MD` | Maryland | 24
-`ME` | Maine | 16 |  | `MI` | Michigan | 83
-`MN` | Minnesota | 87 |  | `MO` | Missouri | 115
-`MS` | Mississippi | 82 |  | `MT` | Montana | 48
-`NC` | North Carolina | 100 |  | `ND` | North Dakota | 48
-`NE` | Nebraska | 80 |  | `NH` | *New Hampshire* | *10*
-`NJ` | New Jersey | 21 |  | `NM` | New Mexico | 32
-`NV` | Nevada | 15 |  | `NY` | New York | 62
-`OH` | Ohio | 88 |  | `OK` | Oklahoma | 77
-`OR` | Oregon | 35 |  | `PA` | Pennsylvania | 67
-`RI` | *Rhode Island* | *5* |  | `SC` | South Carolina | 46
-`SD` | South Dakota | 61 |  | `TN` | Tennessee | 95
-`TX` | Texas | 244 |  | `UT` | Utah | 28
-`VA` | Virginia | 133 | | `VT` | Vermont | 14
-`WA` | Washington | 39 | | `WI` | Wisconsin | 72
-`WV` | West Virginia | 55 | | `WY` | Wyoming | 23
+1. Remove the first row of the `.csv` file to leave the second row as the top row before ingesting the data into R (I suggest you do this in Excel or perhaps Google Sheets, and then resave a new version of the file without this top row as a .csv before ingesting into R)
+
+2. Read the resulting `.csv` file into R, and call the resulting tibble **chr_raw**. Be sure that this goes as smoothly as possible.
+
+## Task B. **Identify a set of 4-6 states, containing 200-400 counties.** 
+
+Your selection must include: 
+
+- the 88 counties of Ohio, and 
+- all of the counties in a subset of 3-5 additional states in the US
+
+The number of counties associated with each state (specified using its two-letter postal abbreviation code) is listed below, for your convenience. 
+
+- Do not include any state (including the District of Columbia, Connecticut, Delaware, Hawaii, New Hampshire and Rhode Island) with fewer than 12 counties. Those entities are shown in red below.
+
+![](county_counts.PNG)
 
 So, including `OH`, you will need a total of 200-400 counties, from 4-6 states. For example,
 
@@ -73,20 +63,33 @@ So, including `OH`, you will need a total of 200-400 counties, from 4-6 states. 
 - another combination would be the states of `WA` (39 counties), `WI` (72 counties), `WV` (55 counties) and `WY` (23 counties) to join `OH` (88 counties) yielding 277 counties in 5 states
 - and yet another would be `PA` (67), `NY` (62), `NJ` (21), `MD` (24) and `VA` (133) in addition to `OH` (88) yielding 395 counties in 6 states
 
-**Note 1**: You can choose your subset of states in any way you like, keeping in mind that some variables in the CHR data are not available for some counties, and that each state you select should have more than 12 counties. You should have some reason for selecting the states that you do, and you should describe that reason in a complete sentence or two in your report.
+### Notes
 
-2. **Identify Your Variables**: Identify variables from the data for your selected sample of counties that will allow you to develop a data set that includes:
+1. You can choose your subset of states in any way you like, keeping in mind that some variables in the CHR data are not available for some counties, and that each state you select should have more than 12 counties. 
+2. You should have some reason for selecting the states that you do, and you will need to describe that reason in a complete sentence or two in your proposal and your final report.
+
+## Task C. **Identify Your Variables**
+
+Here you will need to identify variables from the data for your selected sample of counties that will allow you to create a tibble that includes:
 
 - the five-digit fips code for the county, which will be a convenient ID variable
 - the name of the county, which will be useful for labeling and identifying the counties 
 - the `state`, which will be a multi-categorical (with 4-6 categories) variable
 - and a total of five variables selected from the 107 variables in the CHR data set that are listed as `vXXX_rawvalue` (note: to select the entire group of 107 variables, you might try `select(ends_with("rawvalue"))` as part of a pipe of the data.)
 
-**Note 2**: Each of the five variables you select must have data for at least 75% of the counties in each state you plan to study. This is something you will have to check on.
+The [2020 CHR Analytic Data Documentation](https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf), and [2020 Data Dictionary](https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf) PDF files are crucial here, as those are the ones that explain what the available variables mean, and how they should be labeled. 
 
-**Note 3**: Across your complete set of 4-6 selected states, the raw versions of each of your five selected variables must have at least 10 distinct non-missing values. Again, you'll need to show that you have checked this to be true.
+### Notes
 
-3. **Create Modified Variables**: Create your actual variables. Your five selected quantitative variables, selected by you from the 107 available "raw value" CHR variables, will need be treated as follows:
+1. As mentioned above, your five variables must be five different variables selected from the 107 variables in the CHR data set that are listed as `vXXX_rawvalue`.
+
+2. Each of the five variables you select must have data for at least 75% of the counties in each state you plan to study. This is something you will have to check on, in R, and you'll have to present the code, and demonstrate with complete English sentences that you've verified this to be true for your selections.
+
+3. Across your complete set of 4-6 selected states, the raw versions of each of your five selected variables must have at least 10 distinct non-missing values. Again, you'll need to show R code to do this checking, and demonstrate with complete English sentences that you have checked this to be true.
+
+## Task D. **Create Categorical Variables**
+
+Your five selected quantitative variables, selected by you from the 107 available "raw value" CHR variables, will need be treated as follows:
 
 - variable 1 will be treated as quantitative, and as an outcome of interest
 - two others (variables 2 and 3) will also be treated as quantitative predictors of interest for variable 1
@@ -94,29 +97,44 @@ So, including `OH`, you will need a total of 200-400 counties, from 4-6 states. 
 - variable 5 will be categorized into 3-5 mutually exclusive and collectively exhaustive levels to create a multi-categorical variable of interest in predicting variable 1
 - the `state` will serve as another multi-categorical (with 4-6 categories) predictor of variable 1, so this will also be part of your tibble
 
-4. **Create your Main Tibble**: Your main data set for analysis then should be gathered into a tibble containing the following information:
+## Task E. **Create your Main Tibble**
+
+In your R Markdown file, you will need to present all code necessary to take the original .csv data file (with the top row removed outside of R) and wind up with your `csv_2020` tibble so that we can run that code and get the same results you do.
+
+Your main data set for analysis then should be gathered into a tibble called **chr_2020** containing the following information:
 
 - the identifying variables for each county, specifically:
     - `fipscode` = the five-digit fips code for the state and county,
     - `county` = the name of the county
     - `state` = the postal abbreviation code for the state
-- renamed versions of the original "raw value" versions of the five variables you've chosen, renamed to be more descriptive, and appended with `_raw` so that, for example, if you choose to use variable `v009_rawvalue` which is about adult smoking, your variable name should be `adult_smoking_raw`
-- your six "clean" versions of the data as described above, with your variables 2, 5 and 6 categorized appropriately using R code, and all of them renamed to be useful, so, for instance, if you've categorized the adult smoking variable, you might name that `adult_smoking_cat`, and if you've treated it as quantitative, you might name it `adult_smoking`.
+- your three selected quantitative variables
+- your binary categorical variable derived from your fourth selected variable
+- your multi-categorical variable derived from your fifth selected variable
+- the "original" quantitative versions of the two variables (4 and 5) that you later categorized
 
-Each row in this tibble should contain all of the counties within the 4-6 states you are studying, and no other counties should be included in your tibble. If data for some counties are missing in the raw data for one or more of your variables, then these data should be indicated as missing (using NA) in the tibble.
+All of these variables should be renamed (and also have clean_names applied) so as to have descriptive and maximally helpful variable names. 
 
-In your R Markdown file, you will need to present all code necessary to take the original .csv data file (with the top row removed outside of R) and wind up with this tibble.
+- For example, if you have decided to use as a quantitative variable something like  `v009_rawvalue`, which is about adult smoking, you should rename the variable `v009_rawvalue` to **adult_smoking** in your tibble. 
+- If `v009_rawvalue` (about adult smoking) is to be one of your categorical variables, then you should include both the original quantitative value (renamed `adult_smoking_raw`) and your categorical variable that you'll actually use in analyses, and which is named `adult_smoking_cat`.
 
-## Evaluating Your Tibble Numerically
+### Notes
 
-You will then prove that your tibble is in fact a tibble and not just a data frame by listing it, so that the first 10 rows are printed, and the columns are appropriately labeled.
+1. After your cleaning is done, each row in your `chr_2020` tibble should contain all of the counties within the 4-6 states you are studying, and no other counties should be included in your tibble. 
+2. If data for some counties are missing in the raw data for one or more of your variables, then these data should be indicated as missing (using NA) in the tibble.
+3. There is no need to set a seed in this process, as you are not doing anything that involves selecting a random sample.
 
-You will then provide a codebook as a table in your R Markdown file (and HTML/PDF output) that specifies the name of each variable in your tibble and its definition.
+## Task F. **Saving and Summarizing Your Tibble**
 
-You will then demonstrate main numerical summaries from the tibble by running the following three summaries:
+1. **Save the Tibble**: You should provide code that saves your tibble as an R data set into your R Project, with the file name **chr_2020_YOURNAME.Rds**. If you like, you can store this `.Rds` file in a `data` subdirectory within your R Project.
 
-1. `Hmisc::describe` on the whole data set
-2. `mosaic::favstats` on each of your final (not raw) versions of the quantitative variables (so variables 1, 2, and 3)
-3. `janitor::tabyl` on your categorical variables 4 and 5 as well as on `state`.
+2. **Print the Tibble**: You will then prove that your tibble is in fact a tibble and not just a data frame by listing it, so that the first 10 rows are printed, and the columns are appropriately labeled.
 
+3. **Provide a Codebook**: You will then provide a codebook as a table in your R Markdown file (and HTML/PDF output) that specifies the name of each variable in your tibble and its definition.
+
+4. **Numerical Summaries**: You will then demonstrate main numerical summaries from the tibble by running the following summaries.
+
+- `Hmisc::describe` on the whole tibble (which is what you'll do for the proposal).
+- In the project report, there are two additional requirements. 
+    - `mosaic::favstats` on each of your final (not raw) versions of the quantitative variables (so variables 1, 2, and 3)
+    - `janitor::tabyl` on your categorical variables 4 and 5 as well as on `state`.
 

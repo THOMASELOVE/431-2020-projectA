@@ -325,12 +325,12 @@ $(document).ready(function () {
 </div>
 
 
-<p>This page was last updated: 2020-09-16 13:02:46.</p>
+<p>This page was last updated: 2020-09-16 14:40:17.</p>
 <div id="what-data-will-i-use" class="section level1">
 <h1>What Data Will I Use?</h1>
-<p>The data set for Project A is now available. The data are the 2020 version of the analytic data from County Health Rankings. In much of what follows, we will abbreviate County Health Rankings as CHR.</p>
+<p>The data set for Project A is now available. The data are the 2020 version of the analytic data from County Health Rankings. In much of what follows, we will abbreviate County Health Rankings as <strong>CHR</strong>.</p>
 <p>The data are gathered at <a href="https://www.countyhealthrankings.org/explore-health-rankings/rankings-data-documentation">the County Health Rankings Data &amp; Documentation site</a>.</p>
-<p>The key links for you are provided as part of the National Data &amp; Documentation section of that site for the <strong>2020 County Health Rankings</strong>. Do not use data from previous editions of the CHR, and do not use the trends data in this project.</p>
+<p>The key links for you are provided as part of the National Data &amp; Documentation section of that site for the <strong>2020 County Health Rankings</strong>. Do not use data from previous editions of the CHR, and do not use the trends data available on their website for this project.</p>
 <p>Specifically, you’ll need three files:</p>
 <ul>
 <li><a href="https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020_0.csv">the 2020 CHR CSV Analytic Data</a> (a .csv file)</li>
@@ -339,284 +339,76 @@ $(document).ready(function () {
 </ul>
 <p>These files are also available in the <a href="https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/data/README.md">data folder for Project A</a> on Github, and in the Google Drive folder Dr. Love has shared with you.</p>
 </div>
-<div id="cleaning-the-data" class="section level1">
-<h1>Cleaning the Data</h1>
-<p>Cleaning the data will be a time-consuming effort but you can begin it immediately. Before you complete any of the required analyses in R, you’ll need to complete the following steps.</p>
+<div id="developing-the-data-overview" class="section level1">
+<h1>Developing the Data: Overview</h1>
+<p>Cleaning the data will be a time-consuming effort, but the good news is that you can begin it immediately. Before you complete any of the required analyses in R, you’ll need to complete the following steps.</p>
 <ol style="list-style-type: decimal">
-<li>Remove the first row of the csv file to leave the second row as the top row before ingesting the data into R (I suggest you do this in Excel or perhaps Google Sheets, and then resave a new version of the file without this top row as a .csv before ingesting into R)</li>
-<li>Select variables (there will be 3 required variables, plus 5 additional variables you select, for a total of 8) that you actually need to use and rename them into useful formats instead of the default names provided by CHR.</li>
-<li>Filter to the subset of observations (counties) that you actually want to study, and note that each of these counties will have to have a <code>county_ranked</code> value of 1, and in addition, you will be working with a subset of the available <code>state</code>s, which should include the 88 counties of Ohio, plus counties from 3-5 other states you will select.</li>
-<li>Make some transformations to obtain categorical versions (factors) of selected variables and add them to your tibble.</li>
+<li>Ingest the data into R after removing the top row from the .csv outside of R.</li>
+<li>Select variables (at this stage, there will be 3 required variables, plus 5 additional variables you select, for a total of 8) that you actually need to use and rename them into useful formats instead of the default names provided by CHR. Save the result in your analytic tibble, which should be called <strong>chr_2020</strong>.</li>
+<li>Filter your <strong>chr_2020</strong> file so that it contains only the subset of observations (counties) that you actually want to study. Note that each of these counties will have to have a <code>county_ranked</code> value of 1. You will be working with a subset of the available <code>state</code>s, which should include the 88 counties of Ohio, plus counties from 3-5 other states you will select.<br />
+</li>
+<li>Make some transformations to obtain categorical versions (factors) of two of your selected variables and add them to your <strong>chr_2020</strong> tibble. Retain the original versions of those two variables, too, so that you wind up with 10 variables in total.</li>
+<li>Your final <strong>chr_2020</strong> tibble will therefore contain 200-400 rows (counties) and 10 variables. Eventually, you’ll save this tibble as an R data frame.</li>
 </ol>
 </div>
 <div id="data-development-task-list" class="section level1">
 <h1>Data Development Task List</h1>
+<p>Here are some of the necessary details for each step of this process. Please refer to Dr. Love’s materials in the Project A <a href="examples.html">Examples</a> section for more information.</p>
+<div id="task-a.-ingest-the-county-health-rankings-data-into-a-tibble" class="section level2">
+<h2>Task A. **Ingest the County Health Rankings Data into a tibble</h2>
 <ol style="list-style-type: decimal">
-<li><strong>Identify a set of 4-6 states, containing 200-400 counties.</strong> This must include the 88 counties of Ohio, and all of the counties within a subset of 3-5 additional states in the US, not including the District of Columbia, and also not including the five states (Connecticut, Delaware, Hawaii, New Hampshire and Rhode Island) with fewer than 12 counties. The number of counties associated with each state (specified using its two-letter postal abbreviation code) is listed below, for your convenience.</li>
+<li><p>Remove the first row of the <code>.csv</code> file to leave the second row as the top row before ingesting the data into R (I suggest you do this in Excel or perhaps Google Sheets, and then resave a new version of the file without this top row as a .csv before ingesting into R)</p></li>
+<li><p>Read the resulting <code>.csv</code> file into R, and call the resulting tibble <strong>chr_raw</strong>. Be sure that this goes as smoothly as possible.</p></li>
 </ol>
-<div id="states-with-fewer-than-12-counties-are-italicized-below." class="section level2">
-<h2>States with fewer than 12 counties are italicized below.</h2>
-<table>
-<thead>
-<tr class="header">
-<th align="center"><code>state</code></th>
-<th align="right">Name</th>
-<th align="right">Counties</th>
-<th align="right"></th>
-<th align="center"><code>state</code></th>
-<th align="right">Name</th>
-<th align="right">Counties</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><code>AK</code></td>
-<td align="right">Alaska</td>
-<td align="right">25</td>
-<td align="right"></td>
-<td align="center"><code>AL</code></td>
-<td align="right">Alabama</td>
-<td align="right">67</td>
-</tr>
-<tr class="even">
-<td align="center"><code>AR</code></td>
-<td align="right">Arkansas</td>
-<td align="right">75</td>
-<td align="right"></td>
-<td align="center"><code>AZ</code></td>
-<td align="right">Arizona</td>
-<td align="right">15</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>CA</code></td>
-<td align="right">California</td>
-<td align="right">58</td>
-<td align="right"></td>
-<td align="center"><code>CO</code></td>
-<td align="right">Colorado</td>
-<td align="right">60</td>
-</tr>
-<tr class="even">
-<td align="center"><code>CT</code></td>
-<td align="right"><em>Connecticut</em></td>
-<td align="right"><em>8</em></td>
-<td align="right"></td>
-<td align="center"><code>DE</code></td>
-<td align="right"><em>Delaware</em></td>
-<td align="right"><em>3</em></td>
-</tr>
-<tr class="odd">
-<td align="center"><code>FL</code></td>
-<td align="right">Florida</td>
-<td align="right">67</td>
-<td align="right"></td>
-<td align="center"><code>GA</code></td>
-<td align="right">Georgia</td>
-<td align="right">159</td>
-</tr>
-<tr class="even">
-<td align="center"><code>HI</code></td>
-<td align="right"><em>Hawaii</em></td>
-<td align="right"><em>4</em></td>
-<td align="right"></td>
-<td align="center"><code>IA</code></td>
-<td align="right">Iowa</td>
-<td align="right">99</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>ID</code></td>
-<td align="right">Idaho</td>
-<td align="right">42</td>
-<td align="right"></td>
-<td align="center"><code>IL</code></td>
-<td align="right">Illinois</td>
-<td align="right">102</td>
-</tr>
-<tr class="even">
-<td align="center"><code>IN</code></td>
-<td align="right">Indiana</td>
-<td align="right">92</td>
-<td align="right"></td>
-<td align="center"><code>KS</code></td>
-<td align="right">Kansas</td>
-<td align="right">104</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>KY</code></td>
-<td align="right">Kentucky</td>
-<td align="right">120</td>
-<td align="right"></td>
-<td align="center"><code>LA</code></td>
-<td align="right">Louisiana</td>
-<td align="right">64</td>
-</tr>
-<tr class="even">
-<td align="center"><code>MA</code></td>
-<td align="right">Massachusetts</td>
-<td align="right">14</td>
-<td align="right"></td>
-<td align="center"><code>MD</code></td>
-<td align="right">Maryland</td>
-<td align="right">24</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>ME</code></td>
-<td align="right">Maine</td>
-<td align="right">16</td>
-<td align="right"></td>
-<td align="center"><code>MI</code></td>
-<td align="right">Michigan</td>
-<td align="right">83</td>
-</tr>
-<tr class="even">
-<td align="center"><code>MN</code></td>
-<td align="right">Minnesota</td>
-<td align="right">87</td>
-<td align="right"></td>
-<td align="center"><code>MO</code></td>
-<td align="right">Missouri</td>
-<td align="right">115</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>MS</code></td>
-<td align="right">Mississippi</td>
-<td align="right">82</td>
-<td align="right"></td>
-<td align="center"><code>MT</code></td>
-<td align="right">Montana</td>
-<td align="right">48</td>
-</tr>
-<tr class="even">
-<td align="center"><code>NC</code></td>
-<td align="right">North Carolina</td>
-<td align="right">100</td>
-<td align="right"></td>
-<td align="center"><code>ND</code></td>
-<td align="right">North Dakota</td>
-<td align="right">48</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>NE</code></td>
-<td align="right">Nebraska</td>
-<td align="right">80</td>
-<td align="right"></td>
-<td align="center"><code>NH</code></td>
-<td align="right"><em>New Hampshire</em></td>
-<td align="right"><em>10</em></td>
-</tr>
-<tr class="even">
-<td align="center"><code>NJ</code></td>
-<td align="right">New Jersey</td>
-<td align="right">21</td>
-<td align="right"></td>
-<td align="center"><code>NM</code></td>
-<td align="right">New Mexico</td>
-<td align="right">32</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>NV</code></td>
-<td align="right">Nevada</td>
-<td align="right">15</td>
-<td align="right"></td>
-<td align="center"><code>NY</code></td>
-<td align="right">New York</td>
-<td align="right">62</td>
-</tr>
-<tr class="even">
-<td align="center"><code>OH</code></td>
-<td align="right">Ohio</td>
-<td align="right">88</td>
-<td align="right"></td>
-<td align="center"><code>OK</code></td>
-<td align="right">Oklahoma</td>
-<td align="right">77</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>OR</code></td>
-<td align="right">Oregon</td>
-<td align="right">35</td>
-<td align="right"></td>
-<td align="center"><code>PA</code></td>
-<td align="right">Pennsylvania</td>
-<td align="right">67</td>
-</tr>
-<tr class="even">
-<td align="center"><code>RI</code></td>
-<td align="right"><em>Rhode Island</em></td>
-<td align="right"><em>5</em></td>
-<td align="right"></td>
-<td align="center"><code>SC</code></td>
-<td align="right">South Carolina</td>
-<td align="right">46</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>SD</code></td>
-<td align="right">South Dakota</td>
-<td align="right">61</td>
-<td align="right"></td>
-<td align="center"><code>TN</code></td>
-<td align="right">Tennessee</td>
-<td align="right">95</td>
-</tr>
-<tr class="even">
-<td align="center"><code>TX</code></td>
-<td align="right">Texas</td>
-<td align="right">244</td>
-<td align="right"></td>
-<td align="center"><code>UT</code></td>
-<td align="right">Utah</td>
-<td align="right">28</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>VA</code></td>
-<td align="right">Virginia</td>
-<td align="right">133</td>
-<td align="right"></td>
-<td align="center"><code>VT</code></td>
-<td align="right">Vermont</td>
-<td align="right">14</td>
-</tr>
-<tr class="even">
-<td align="center"><code>WA</code></td>
-<td align="right">Washington</td>
-<td align="right">39</td>
-<td align="right"></td>
-<td align="center"><code>WI</code></td>
-<td align="right">Wisconsin</td>
-<td align="right">72</td>
-</tr>
-<tr class="odd">
-<td align="center"><code>WV</code></td>
-<td align="right">West Virginia</td>
-<td align="right">55</td>
-<td align="right"></td>
-<td align="center"><code>WY</code></td>
-<td align="right">Wyoming</td>
-<td align="right">23</td>
-</tr>
-</tbody>
-</table>
+</div>
+<div id="task-b.-identify-a-set-of-4-6-states-containing-200-400-counties." class="section level2">
+<h2>Task B. <strong>Identify a set of 4-6 states, containing 200-400 counties.</strong></h2>
+<p>Your selection must include:</p>
+<ul>
+<li>the 88 counties of Ohio, and</li>
+<li>all of the counties in a subset of 3-5 additional states in the US</li>
+</ul>
+<p>The number of counties associated with each state (specified using its two-letter postal abbreviation code) is listed below, for your convenience.</p>
+<ul>
+<li>Do not include any state (including the District of Columbia, Connecticut, Delaware, Hawaii, New Hampshire and Rhode Island) with fewer than 12 counties. Those entities are shown in red below.</li>
+</ul>
+<p><img src="county_counts.PNG" /></p>
 <p>So, including <code>OH</code>, you will need a total of 200-400 counties, from 4-6 states. For example,</p>
 <ul>
 <li>one possible combination would be the states of <code>TX</code> (244 counties), <code>AZ</code> (15 counties) and <code>NM</code> (32 counties) in addition to <code>OH</code> (88 counties), which would yield 379 counties in 4 states</li>
 <li>another combination would be the states of <code>WA</code> (39 counties), <code>WI</code> (72 counties), <code>WV</code> (55 counties) and <code>WY</code> (23 counties) to join <code>OH</code> (88 counties) yielding 277 counties in 5 states</li>
 <li>and yet another would be <code>PA</code> (67), <code>NY</code> (62), <code>NJ</code> (21), <code>MD</code> (24) and <code>VA</code> (133) in addition to <code>OH</code> (88) yielding 395 counties in 6 states</li>
 </ul>
-<p><strong>Note 1</strong>: You can choose your subset of states in any way you like, keeping in mind that some variables in the CHR data are not available for some counties, and that each state you select should have more than 12 counties. You should have some reason for selecting the states that you do, and you should describe that reason in a complete sentence or two in your report.</p>
-<ol start="2" style="list-style-type: decimal">
-<li><strong>Identify Your Variables</strong>: Identify variables from the data for your selected sample of counties that will allow you to develop a data set that includes:</li>
+<div id="notes" class="section level3">
+<h3>Notes</h3>
+<ol style="list-style-type: decimal">
+<li>You can choose your subset of states in any way you like, keeping in mind that some variables in the CHR data are not available for some counties, and that each state you select should have more than 12 counties.</li>
+<li>You should have some reason for selecting the states that you do, and you will need to describe that reason in a complete sentence or two in your proposal and your final report.</li>
 </ol>
+</div>
+</div>
+<div id="task-c.-identify-your-variables" class="section level2">
+<h2>Task C. <strong>Identify Your Variables</strong></h2>
+<p>Here you will need to identify variables from the data for your selected sample of counties that will allow you to create a tibble that includes:</p>
 <ul>
 <li>the five-digit fips code for the county, which will be a convenient ID variable</li>
 <li>the name of the county, which will be useful for labeling and identifying the counties</li>
 <li>the <code>state</code>, which will be a multi-categorical (with 4-6 categories) variable</li>
 <li>and a total of five variables selected from the 107 variables in the CHR data set that are listed as <code>vXXX_rawvalue</code> (note: to select the entire group of 107 variables, you might try <code>select(ends_with("rawvalue"))</code> as part of a pipe of the data.)</li>
 </ul>
-<p><strong>Note 2</strong>: Each of the five variables you select must have data for at least 75% of the counties in each state you plan to study. This is something you will have to check on.</p>
-<p><strong>Note 3</strong>: Across your complete set of 4-6 selected states, the raw versions of each of your five selected variables must have at least 10 distinct non-missing values. Again, you’ll need to show that you have checked this to be true.</p>
-<ol start="3" style="list-style-type: decimal">
-<li><strong>Create Modified Variables</strong>: Create your actual variables. Your five selected quantitative variables, selected by you from the 107 available “raw value” CHR variables, will need be treated as follows:</li>
+<p>The <a href="https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf">2020 CHR Analytic Data Documentation</a>, and <a href="https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf">2020 Data Dictionary</a> PDF files are crucial here, as those are the ones that explain what the available variables mean, and how they should be labeled.</p>
+<div id="notes-1" class="section level3">
+<h3>Notes</h3>
+<ol style="list-style-type: decimal">
+<li><p>As mentioned above, your five variables must be five different variables selected from the 107 variables in the CHR data set that are listed as <code>vXXX_rawvalue</code>.</p></li>
+<li><p>Each of the five variables you select must have data for at least 75% of the counties in each state you plan to study. This is something you will have to check on, in R, and you’ll have to present the code, and demonstrate with complete English sentences that you’ve verified this to be true for your selections.</p></li>
+<li><p>Across your complete set of 4-6 selected states, the raw versions of each of your five selected variables must have at least 10 distinct non-missing values. Again, you’ll need to show R code to do this checking, and demonstrate with complete English sentences that you have checked this to be true.</p></li>
 </ol>
+</div>
+</div>
+<div id="task-d.-create-categorical-variables" class="section level2">
+<h2>Task D. <strong>Create Categorical Variables</strong></h2>
+<p>Your five selected quantitative variables, selected by you from the 107 available “raw value” CHR variables, will need be treated as follows:</p>
 <ul>
 <li>variable 1 will be treated as quantitative, and as an outcome of interest</li>
 <li>two others (variables 2 and 3) will also be treated as quantitative predictors of interest for variable 1</li>
@@ -624,9 +416,11 @@ $(document).ready(function () {
 <li>variable 5 will be categorized into 3-5 mutually exclusive and collectively exhaustive levels to create a multi-categorical variable of interest in predicting variable 1</li>
 <li>the <code>state</code> will serve as another multi-categorical (with 4-6 categories) predictor of variable 1, so this will also be part of your tibble</li>
 </ul>
-<ol start="4" style="list-style-type: decimal">
-<li><strong>Create your Main Tibble</strong>: Your main data set for analysis then should be gathered into a tibble containing the following information:</li>
-</ol>
+</div>
+<div id="task-e.-create-your-main-tibble" class="section level2">
+<h2>Task E. <strong>Create your Main Tibble</strong></h2>
+<p>In your R Markdown file, you will need to present all code necessary to take the original .csv data file (with the top row removed outside of R) and wind up with your <code>csv_2020</code> tibble so that we can run that code and get the same results you do.</p>
+<p>Your main data set for analysis then should be gathered into a tibble called <strong>chr_2020</strong> containing the following information:</p>
 <ul>
 <li>the identifying variables for each county, specifically:
 <ul>
@@ -634,22 +428,41 @@ $(document).ready(function () {
 <li><code>county</code> = the name of the county</li>
 <li><code>state</code> = the postal abbreviation code for the state</li>
 </ul></li>
-<li>renamed versions of the original “raw value” versions of the five variables you’ve chosen, renamed to be more descriptive, and appended with <code>_raw</code> so that, for example, if you choose to use variable <code>v009_rawvalue</code> which is about adult smoking, your variable name should be <code>adult_smoking_raw</code></li>
-<li>your six “clean” versions of the data as described above, with your variables 2, 5 and 6 categorized appropriately using R code, and all of them renamed to be useful, so, for instance, if you’ve categorized the adult smoking variable, you might name that <code>adult_smoking_cat</code>, and if you’ve treated it as quantitative, you might name it <code>adult_smoking</code>.</li>
+<li>your three selected quantitative variables</li>
+<li>your binary categorical variable derived from your fourth selected variable</li>
+<li>your multi-categorical variable derived from your fifth selected variable</li>
+<li>the “original” quantitative versions of the two variables (4 and 5) that you later categorized</li>
 </ul>
-<p>Each row in this tibble should contain all of the counties within the 4-6 states you are studying, and no other counties should be included in your tibble. If data for some counties are missing in the raw data for one or more of your variables, then these data should be indicated as missing (using NA) in the tibble.</p>
-<p>In your R Markdown file, you will need to present all code necessary to take the original .csv data file (with the top row removed outside of R) and wind up with this tibble.</p>
-</div>
-<div id="evaluating-your-tibble-numerically" class="section level2">
-<h2>Evaluating Your Tibble Numerically</h2>
-<p>You will then prove that your tibble is in fact a tibble and not just a data frame by listing it, so that the first 10 rows are printed, and the columns are appropriately labeled.</p>
-<p>You will then provide a codebook as a table in your R Markdown file (and HTML/PDF output) that specifies the name of each variable in your tibble and its definition.</p>
-<p>You will then demonstrate main numerical summaries from the tibble by running the following three summaries:</p>
+<p>All of these variables should be renamed (and also have clean_names applied) so as to have descriptive and maximally helpful variable names.</p>
+<ul>
+<li>For example, if you have decided to use as a quantitative variable something like <code>v009_rawvalue</code>, which is about adult smoking, you should rename the variable <code>v009_rawvalue</code> to <strong>adult_smoking</strong> in your tibble.</li>
+<li>If <code>v009_rawvalue</code> (about adult smoking) is to be one of your categorical variables, then you should include both the original quantitative value (renamed <code>adult_smoking_raw</code>) and your categorical variable that you’ll actually use in analyses, and which is named <code>adult_smoking_cat</code>.</li>
+</ul>
+<div id="notes-2" class="section level3">
+<h3>Notes</h3>
 <ol style="list-style-type: decimal">
-<li><code>Hmisc::describe</code> on the whole data set</li>
+<li>After your cleaning is done, each row in your <code>chr_2020</code> tibble should contain all of the counties within the 4-6 states you are studying, and no other counties should be included in your tibble.</li>
+<li>If data for some counties are missing in the raw data for one or more of your variables, then these data should be indicated as missing (using NA) in the tibble.</li>
+<li>There is no need to set a seed in this process, as you are not doing anything that involves selecting a random sample.</li>
+</ol>
+</div>
+</div>
+<div id="task-f.-saving-and-summarizing-your-tibble" class="section level2">
+<h2>Task F. <strong>Saving and Summarizing Your Tibble</strong></h2>
+<ol style="list-style-type: decimal">
+<li><p><strong>Save the Tibble</strong>: You should provide code that saves your tibble as an R data set into your R Project, with the file name <strong>chr_2020_YOURNAME.Rds</strong>. If you like, you can store this <code>.Rds</code> file in a <code>data</code> subdirectory within your R Project.</p></li>
+<li><p><strong>Print the Tibble</strong>: You will then prove that your tibble is in fact a tibble and not just a data frame by listing it, so that the first 10 rows are printed, and the columns are appropriately labeled.</p></li>
+<li><p><strong>Provide a Codebook</strong>: You will then provide a codebook as a table in your R Markdown file (and HTML/PDF output) that specifies the name of each variable in your tibble and its definition.</p></li>
+<li><p><strong>Numerical Summaries</strong>: You will then demonstrate main numerical summaries from the tibble by running the following summaries.</p></li>
+</ol>
+<ul>
+<li><code>Hmisc::describe</code> on the whole tibble (which is what you’ll do for the proposal).</li>
+<li>In the project report, there are two additional requirements.
+<ul>
 <li><code>mosaic::favstats</code> on each of your final (not raw) versions of the quantitative variables (so variables 1, 2, and 3)</li>
 <li><code>janitor::tabyl</code> on your categorical variables 4 and 5 as well as on <code>state</code>.</li>
-</ol>
+</ul></li>
+</ul>
 </div>
 </div>
 
