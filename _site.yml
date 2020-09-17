@@ -16,7 +16,7 @@ navbar:
           href: proposal.html
         - text: "Final Submission (due 10-20)"
           href: final.html
-    - text: "Dr Love's Examples"
+    - text: "Examples"
       href: examples.html
   right:
     - text: "Contact Us"
