@@ -36,12 +36,11 @@ knitr::opts_chunk$set(comment = NA)
 - **Cleaning the Data**: To build your data set, which we'll be a sample of the full data, you will do a series of things in R.
     - You'll need to select a subset of 4-6 states (Ohio will automatically be one of them) which together include 200-400 counties. 
     - You'll need to select a sample of 5 variables from the 107 available in the data, to which you'll add three pre-specified variables (a fips code, the state name and the county name) which will identify your observations.
-    - Three of those variables will be included as quantitative, and for the other two, we'll  require you to use R to create categories out of the variables.
+    - Three of those variables will be included as quantitative, and for the other two, we'll  require you to use R to create categories out of the variables. (Note: Categorizing quantitative information like this turns out to be a **terrible** idea in practical model-building. We're doing this here for pedagogical reasons that will, in time, become clearer.) 
     - Creating a tibble of your selected counties, and your set of variables will be necessary to complete the proposal.
-- **Analyses You'll Do**: After your proposal is accepted, you have four analytic tasks using your clean tibble. The observations (rows) in your data will be the counties from your set of 4-6 states. You'll have four main tasks, listed below.
+- **Analyses You'll Do**: After your proposal is accepted, you have three analytic tasks using your clean tibble. The observations (rows) in your data will be the counties from your set of 4-6 states. The three tasks are listed below.
     - Visualizing and modeling the relationship between a quantitative outcome and a quantitative predictor.
     - Visualizing and modeling the relationship between a quantitative outcome and a categorical predictor (with 2-5 levels).
-    - Visualizing and modeling the relationship between a quantitative outcome and a quantitative predictor, after adjustment for a categorical predictor with 2-5 levels.
     - Visualizing and modeling the relationship between a quantitative outcome and a quantitative predictor, after adjustment for the state in which the county is located
 - **Examples from Dr. Love**: We will provide a sample analysis using R Markdown to study data from a previous year's data from County Health Rankings, so that you'll have an example to use in preparing your project proposal, and your final project report. 
 

@@ -114,8 +114,8 @@ Your five selected quantitative variables, selected by you from the 107 availabl
 
 - variable 1 will be treated as quantitative, and as an outcome of interest
 - two others (variables 2 and 3) will also be treated as quantitative predictors of interest for variable 1
-- variable 4 will be categorized into 2 mutually exclusive and collectively exhaustive levels to create a binary categorical variable of interest in predicting variable 1
-- variable 5 will be categorized into 3-5 mutually exclusive and collectively exhaustive levels to create a multi-categorical variable of interest in predicting variable 1
+- variable 4 will be categorized into 2 mutually exclusive and collectively exhaustive levels to create a binary categorical variable of interest in predicting variable 1 (this is a terrible idea in practical work)
+- variable 5 will be categorized into 3-5 mutually exclusive and collectively exhaustive levels to create a multi-categorical variable of interest in predicting variable 1 (this is almost as bad as what we'll do to variable 4 in practical work)
 - the `state` will serve as another multi-categorical (with 4-6 categories) predictor of variable 1, so this will also be part of your tibble
 
 ## Task E. **Create your Main Tibble**
@@ -162,12 +162,12 @@ Next, you will provide a codebook as part of your R Markdown file (and HTML/PDF 
 
 1. **Save the Tibble**: You should provide code that saves your tibble as an R data set into your R Project, with the file name **chr_2020_YOURNAME.Rds**. If you like, you can store this `.Rds` file in a `data` subdirectory within your R Project.
 
-2. **Print the Tibble**: You will then prove that your tibble is in fact a tibble and not just a data frame by listing it, so that the first 10 rows are printed, and the columns are appropriately labeled.
+2. **Print the Tibble**: You will then prove that your tibble is in fact a tibble and not just a data frame by listing it, so that the first 10 rows are printed, and the columns are appropriately labeled. 
 
 3. **Numerical Summaries**: You will then demonstrate main numerical summaries from the tibble by running the following summaries.
 
-- `Hmisc::describe` on the whole tibble (which is what you'll do for the proposal).
+- `Hmisc::describe` on the whole tibble (all 10 variables: which is what you'll do for the proposal).
 - In the project report, there are two additional requirements. 
-    - `mosaic::favstats` on each of your final (not raw) versions of the quantitative variables (so variables 1, 2, and 3)
+    - `mosaic::favstats` on each of your quantitative variables (so variables 1, 2, and 3 and the original versions of variables 4 and 5)
     - `janitor::tabyl` on your categorical variables 4 and 5 as well as on `state`.
 

@@ -325,7 +325,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>This page was last updated: 2020-09-16 23:07:50.</p>
+<p>This page was last updated: 2020-09-17 09:46:04.</p>
 <div id="what-data-will-i-use" class="section level1">
 <h1>What Data Will I Use?</h1>
 <p>The data set for Project A is now available. The data are the 2020 version of the analytic data from County Health Rankings. In much of what follows, we will abbreviate County Health Rankings as <strong>CHR</strong>.</p>
@@ -419,8 +419,8 @@ $(document).ready(function () {
 <ul>
 <li>variable 1 will be treated as quantitative, and as an outcome of interest</li>
 <li>two others (variables 2 and 3) will also be treated as quantitative predictors of interest for variable 1</li>
-<li>variable 4 will be categorized into 2 mutually exclusive and collectively exhaustive levels to create a binary categorical variable of interest in predicting variable 1</li>
-<li>variable 5 will be categorized into 3-5 mutually exclusive and collectively exhaustive levels to create a multi-categorical variable of interest in predicting variable 1</li>
+<li>variable 4 will be categorized into 2 mutually exclusive and collectively exhaustive levels to create a binary categorical variable of interest in predicting variable 1 (this is a terrible idea in practical work)</li>
+<li>variable 5 will be categorized into 3-5 mutually exclusive and collectively exhaustive levels to create a multi-categorical variable of interest in predicting variable 1 (this is almost as bad as what we’ll do to variable 4 in practical work)</li>
 <li>the <code>state</code> will serve as another multi-categorical (with 4-6 categories) predictor of variable 1, so this will also be part of your tibble</li>
 </ul>
 </div>
@@ -475,10 +475,10 @@ $(document).ready(function () {
 <li><p><strong>Numerical Summaries</strong>: You will then demonstrate main numerical summaries from the tibble by running the following summaries.</p></li>
 </ol>
 <ul>
-<li><code>Hmisc::describe</code> on the whole tibble (which is what you’ll do for the proposal).</li>
+<li><code>Hmisc::describe</code> on the whole tibble (all 10 variables: which is what you’ll do for the proposal).</li>
 <li>In the project report, there are two additional requirements.
 <ul>
-<li><code>mosaic::favstats</code> on each of your final (not raw) versions of the quantitative variables (so variables 1, 2, and 3)</li>
+<li><code>mosaic::favstats</code> on each of your quantitative variables (so variables 1, 2, and 3 and the original versions of variables 4 and 5)</li>
 <li><code>janitor::tabyl</code> on your categorical variables 4 and 5 as well as on <code>state</code>.</li>
 </ul></li>
 </ul>

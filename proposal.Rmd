@@ -19,7 +19,7 @@ Your project proposal requires you to create the tibble you plan to use and then
 1. A sentence or two (perhaps accompanied by a small table of R results) specifying the 4-6 states you chose, and the number of counties you are studying in total and within each state. In an additional sentence or two, provide some motivation for why you chose those states.
 2. A list of the five variables (including their original raw names and your renamed versions) you are studying, with a clear indication of the cutpoints you chose to create the binary categories out of variable 4 and the multiple categories out of variable 5. Think of this as an early version of what will eventually become your codebook. For each variable, provide a sentence describing your motivation for why this variable was interesting to you.
 3. A print-out of your cleaned up `chr_2020` tibble, to prove it is a tibble, with 10 columns (variables) and 200-400 rows (counties). No writing is required here - just the result of the code.
-4. The `Hmisc::describe` result for your `chr_2020` tibble. As in element 3, code alone is fine for this element.
+4. The `Hmisc::describe` result for your `chr_2020` tibble. As in element 3, code alone is sufficient for this element.
 5. In a paragraph, describe the most challenging (or difficult) part of completing the work so far, and how you were able to overcome whatever it was that was difficult. 
 
 
