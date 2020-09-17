@@ -11,7 +11,7 @@ knitr::opts_chunk$set(comment = NA)
 # What is on this Website
 
 - [The Data page](data.html) contains information on the data you'll be using, and on the required cleaning and development of your final data frame (tibble) for the project. You'll need to complete this cleaning to complete the Proposal.
-- [The Analyses page](analyses.html) contains information on the four analyses you'll need to include in your final submission after completing the development of your data frame.
+- [The Analyses page](analyses.html) contains information on the analyses you'll need to include in your final submission after completing the development of your data frame.
 - The **Your Tasks** folder includes two sub-pages, one for the Proposal, and one for the set of materials due as your final submission.
     - The [Proposal page](proposal.html) describes the proposal and provides submission instructions.
     - The [Final Submission page](final.html) describes the three elements of the final submission (the report, the video and the self-evaluation) and provides submission instructions.
@@ -27,7 +27,7 @@ knitr::opts_chunk$set(comment = NA)
         - you'll have to tell us at this time whether you are working alone or with another person
     - by **Tuesday 2020-10-20 at noon**, a final submission consisting of:
         - a report in R Markdown, and knitted to HTML or PDF
-        - a short (3 minute) video which highlights your key findings from the report
+        - a short (3 minute) video which highlights some of your key findings from the report
         - a self-evaluation Google Form
 - **The Data**: You will be working with data from the 2020 edition of County Health Rankings. 
     - These data describe most counties in the United States. Counties are located within states in the US. There are 88 counties, for instance, in Ohio.
