@@ -325,7 +325,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>This page was last updated: 2020-09-17 21:59:56.</p>
+<p>This page was last updated: 2020-09-18 19:56:41.</p>
 <div id="what-data-will-i-use" class="section level1">
 <h1>What Data Will I Use?</h1>
 <p>The data set for Project A is now available. The data are the 2020 version of the analytic data from County Health Rankings. In much of what follows, we will abbreviate County Health Rankings as <strong>CHR</strong>.</p>
@@ -423,6 +423,12 @@ $(document).ready(function () {
 <li>variable 5 will be categorized into 3-5 mutually exclusive and collectively exhaustive levels to create a multi-categorical variable of interest in predicting variable 1 (this is almost as bad as what we’ll do to variable 4 in practical work)</li>
 <li>the <code>state</code> will serve as another multi-categorical (with 4-6 categories) predictor of variable 1, so this will also be part of your tibble</li>
 </ul>
+<div id="notes-2" class="section level3">
+<h3>Notes</h3>
+<ol style="list-style-type: decimal">
+<li>You will need to verify that all levels (categories) in each of your categorical variables contain at least 10 counties.</li>
+</ol>
+</div>
 </div>
 <div id="task-e.-create-your-main-tibble" class="section level2">
 <h2>Task E. <strong>Create your Main Tibble</strong></h2>
@@ -445,7 +451,7 @@ $(document).ready(function () {
 <li>For example, if you have decided to use as a quantitative variable something like <code>v009_rawvalue</code>, which is about adult smoking, you should rename the variable <code>v009_rawvalue</code> to <strong>adult_smoking</strong> in your tibble.</li>
 <li>If <code>v009_rawvalue</code> (about adult smoking) is to be one of your categorical variables, then you should include both the original quantitative value (renamed <code>adult_smoking_raw</code>) and your categorical variable that you’ll actually use in analyses, and which is named <code>adult_smoking_cat</code>.</li>
 </ul>
-<div id="notes-2" class="section level3">
+<div id="notes-3" class="section level3">
 <h3>Notes</h3>
 <ol style="list-style-type: decimal">
 <li>After your cleaning is done, each row in your <code>chr_2020</code> tibble should contain all of the counties within the 4-6 states you are studying, and no other counties should be included in your tibble.</li>
@@ -457,7 +463,7 @@ $(document).ready(function () {
 <div id="task-f.-provide-a-codebook-for-your-tibble" class="section level2">
 <h2>Task F. <strong>Provide a Codebook for Your Tibble</strong></h2>
 <p>Next, you will provide a codebook as part of your R Markdown file (and HTML/PDF output) that specifies the name of each variable in your tibble and its definition.</p>
-<div id="notes-3" class="section level3">
+<div id="notes-4" class="section level3">
 <h3>Notes</h3>
 <ol style="list-style-type: decimal">
 <li><p>Use the <a href="https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf">2020 CHR Analytic Data Documentation</a> to guide your description of the variables you’ve chosen.</p></li>

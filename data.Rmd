@@ -118,6 +118,10 @@ Your five selected quantitative variables, selected by you from the 107 availabl
 - variable 5 will be categorized into 3-5 mutually exclusive and collectively exhaustive levels to create a multi-categorical variable of interest in predicting variable 1 (this is almost as bad as what we'll do to variable 4 in practical work)
 - the `state` will serve as another multi-categorical (with 4-6 categories) predictor of variable 1, so this will also be part of your tibble
 
+### Notes
+
+1. You will need to verify that all levels (categories) in each of your categorical variables contain at least 10 counties.
+
 ## Task E. **Create your Main Tibble**
 
 In your R Markdown file, you will need to present all code necessary to take the original .csv data file (with the top row removed outside of R) and wind up with your `csv_2020` tibble so that we can run that code and get the same results you do.

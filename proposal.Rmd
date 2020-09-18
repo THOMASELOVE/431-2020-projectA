@@ -25,7 +25,7 @@ Your project proposal requires you to create the tibble you plan to use and then
 
 ### Notes
 
-1. Dr. Love will provide a sample project "proposal" document to you as part of his [Examples](examples.html).
+1. Dr. Love has developed a sample project "proposal" using R Markdown and 2019 County Health Rankings data that will be found in his [Examples](examples.html) materials.
 
 2. Be sure that your proposal includes your name as the author in R Markdown.
 
