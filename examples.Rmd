@@ -10,7 +10,11 @@ knitr::opts_chunk$set(comment = NA)
 
 Dr. Love has prepared the following materials to help you with your project A work:
 
-### 30-Minute Video to Get Started
+## Our Advice
+
+The most important recommendation we have is to use the proposal example R Markdown file Dr. Love has prepared (described in Item 2 below) as a starting point for your own data and proposal development. In combination with the video (Item 1) linked below, this should provide a powerful set of tools for you to complete the Proposal successfully on your first submission.
+
+### Item 1: 30-Minute Video to Get Started
 
 On 2020-09-17, Dr. Love built a 30-minute video recording walking through the first steps in setting up the data for your project A in R.
 
@@ -32,10 +36,22 @@ To watch the video, you have two options:
 
 Let us know if you have any trouble watching the video.
 
-### R Markdown file for a sample Project Proposal
+### Item 2: Project Proposal Example using 2019 Data
 
-Dr. Love has completed this document and will post it soon.
+Dr. Love has completed an R Markdown file and compiled it into an HTML result which you can view now, and which he **strongly** encourages you to use in developing your own proposal.
 
-### R Markdown file for a sample Project Report
+All of the files are downloadable now, in [our Github repository](https://github.com/THOMASELOVE/431-2020/tree/master/projects/projectA/example_projectA_proposal) for this proposal example.
 
-Coming soon.
+If you prefer, you can visit the **431 Fall 2020 Dr Love and Students** Shared Drive in Google, which you should be able to get to when you are logged into Google via CWRU. The recording is found in the "Examples for Project A" subfolder, which includes a folder of data, in addition to the R Markdown and HTML files.
+
+The files associated with this example include:
+
+- Dr. Love's R Markdown file
+- Dr. Love's resulting HTML file, which you can download at the links above, and also view directly at https://rpubs.com/TELOVE/projA-proposal-example-431-2020.
+- data (.csv) as downloaded from County Health Rankings for **2019**
+- the raw data (also .csv) after removing the top row of the downloaded file
+- two PDFs from County Health Rankings identifying the variables in the data
+
+### Additional items
+
+Coming in October.

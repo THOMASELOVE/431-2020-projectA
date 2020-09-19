@@ -15,7 +15,7 @@ knitr::opts_chunk$set(comment = NA)
 - The **Your Tasks** folder includes two sub-pages, one for the Proposal, and one for the set of materials due as your final submission.
     - The [Proposal page](proposal.html) describes the proposal and provides submission instructions.
     - The [Final Submission page](final.html) describes the three elements of the final submission (the report, the video and the self-evaluation) and provides submission instructions.
-- [Dr. Love's Examples](examples.html) contains information on the sample analyses Dr. Love prepares to help you find your way through Project A.
+- [Dr. Love's Examples](examples.html) contains information on sample work Dr. Love has prepared to help you find your way through Project A.
 - The top menu also provides links to contact us, and to the 431 home page.
 
 # Project A Overview
@@ -42,7 +42,7 @@ knitr::opts_chunk$set(comment = NA)
     - Visualizing and modeling the relationship between a quantitative outcome and a quantitative predictor.
     - Visualizing and modeling the relationship between a quantitative outcome and a categorical predictor (with 2-5 levels).
     - Visualizing and modeling the relationship between a quantitative outcome and a quantitative predictor, after adjustment for the state in which the county is located
-- **Examples from Dr. Love**: We will provide a sample analysis using R Markdown to study data from a previous year's data from County Health Rankings, so that you'll have an example to use in preparing your project proposal, and your final project report. 
+- **Examples from Dr. Love**: We have provided both a video (about getting started) and a sample proposal (using R Markdown) that we strongly recommend you use in developing your data and proposal work. These items will also be helpful in ensuring  your final project report matches our expectations and is something to be proud of. 
 
 # Project A Objectives 
 
