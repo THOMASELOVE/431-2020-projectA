@@ -154,11 +154,11 @@ Next, you will provide a codebook as part of your R Markdown file (and HTML/PDF 
 
 ### Notes
 
-1. Use the [2020 CHR Analytic Data Documentation](https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf) to guide your description of the variables you've chosen. 
+1. For help in selecting your variables, the [2020 Data Dictionary](https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf) provides a little bit of information on each variable, as does the [Data Documentation](https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf). 
 
-2. The [2020 Data Dictionary](https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf) provides information on each variable, but you will want to write more than it provides for your key variables, using the [Data Documentation](https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf) to indicate the roles of your chosen variables in the health rankings, and provide context.
+2. After you select your variables, wse the [County Health Rankings website](https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures), and in particular the linked information on that page for full descriptions, definitions and limitations of the variables you select. 
 
-3. Be sure to include a description for each of the 10 variables in your final tibble, not just the ones that you wind up using in your analyses.
+3. Be sure to include a description for each of the 10 variables (3 required + 5 you select + 2 categorical versions you create) in your final tibble, not just the ones that you wind up using in your analyses.
 
 4. Include a description of what the cutpoints are for the two categorical variables you create, and specify how those cutpoints were chosen. 
 

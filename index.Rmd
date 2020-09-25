@@ -33,7 +33,7 @@ knitr::opts_chunk$set(comment = NA)
     - These data describe most counties in the United States. Counties are located within states in the US. There are 88 counties, for instance, in Ohio.
     - The data are available now in a .csv format, and also have two codebooks available.
     - Everyone will start with the same data set, but will pick a subset of that data that will be different for each project.
-- **Cleaning the Data**: To build your data set, which we'll be a sample of the full data, you will do a series of things in R.
+- **Cleaning the Data**: To build your data set, which will be a sample of the full data, you will do a series of things in R.
     - You'll need to select a subset of 4-6 states (Ohio will automatically be one of them) which together include 200-400 counties. 
     - You'll need to select a sample of 5 variables from the 107 available in the data, to which you'll add three pre-specified variables (a fips code, the state name and the county name) which will identify your observations.
     - Three of those variables will be included as quantitative, and for the other two, we'll  require you to use R to create categories out of the variables. (Note: Categorizing quantitative information like this turns out to be a **terrible** idea in practical model-building. We're doing this here for pedagogical reasons that will, in time, become clearer.) 
