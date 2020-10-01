@@ -14,6 +14,8 @@ navbar:
       menu:
         - text: "The Proposal (due 10-02)"
           href: proposal.html
+        - text: "Proposal Checklist"
+          href: checklist.html
         - text: "Final Submission (due 10-20)"
           href: final.html
     - text: "Examples"

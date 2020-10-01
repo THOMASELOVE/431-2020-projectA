@@ -43,7 +43,5 @@ Your project proposal requires you to create the tibble you plan to use and then
 - Successful completion of the proposal by the deadline attempt will receive full credit (25 points.)
     - Proposals that require revisions after the deadline will lose 10% of the possible credit for each revision.
 - **Please** meet the deadline, and don't wait until the last minute to do the work.
-    - Late work on the projects (proposal or final submission) will be **severely** penalized, much more so than late work on labs. A late proposal will not score more than 20 points out of 25 and may score appreciably lower depending on the situation.
     - To encourage an early start, proposals submitted **prior to Sunday 2020-09-27 at noon** will be reviewed quickly by Dr. Love and the TAs, and if a redo is required, you'll hear back quickly enough that you should be able to accomplish it before the 2020-10-02 deadline, and thus still have a chance to earn full credit.
-
 
