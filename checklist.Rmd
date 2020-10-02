@@ -12,8 +12,10 @@ title: "Proposal Checklist"
 2.	The YAML in the R Markdown file produces what we want in the HTML
     - There's a real title that does not include Project A or Proposal and that is correctly spelled, and fits in the available space in the HTML.
     - The author(s) name appears in the HTML correctly.
-    - The date is properly formatted in the HTML (achieve this most easily by using **date: `r Sys.Date()`** in the YAML.)
-    - There is a table of contents (doesn’t have to float, although we prefer this) which appears in the HTML and has section names that are appropriately and automatically numbered (achieve this through **number_sections: TRUE** in the YAML.)
+    - The date is properly formatted in the HTML (achieve this most easily by using the **r Sys.Date()** command within the date section of the YAML as Dr. Love does in his work.)
+    - There is a table of contents (doesn’t have to float, although we prefer this) which appears in the HTML and has section names that are appropriately and automatically numbered.
+        - To achieve this, use **number_sections: TRUE** in the YAML.
+    - The easiest approach to accomplish all of this is to use the readthedown template as Dr. Love did in the Example.
     
 3.	The project ingests the data properly.
     - Eliminating the correct row (in any way that works), and 
@@ -21,7 +23,9 @@ title: "Proposal Checklist"
 
 4.	All section headings are correctly numbered and formatted, and describe effectively the contents of the material contained in that section.
     - Reusing Dr. Love’s headings from the example proposal is a good option, but it's OK if you want to take a different approach, so long as we can find everything.
-    - Again, you need to be using `toc: TRUE` and `number_sections: TRUE` in your YAML.
+    - Again, you need to be using `toc: TRUE` and `number_sections: TRUE` in your YAML if you are building an html_document and not using the readthedown template that Dr. Love used in his example.
+    - If you’re using the readthedown template, then you need number_sections: TRUE, but **not** toc:TRUE since that will be done automatically by the readthedown template.
+
 
 5.	You have an attractively formatted, readable codebook that looks nice in your HTML.
     - The example proposal provides an example, but you can come up with something better if you like. It must be run within R Markdown though - you cannot submit an image instead of getting the codebook through code.
