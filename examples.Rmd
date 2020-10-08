@@ -14,6 +14,20 @@ Dr. Love has prepared the following materials to help you with your project A wo
 
 The most important recommendation we have is to use the proposal example R Markdown file Dr. Love has prepared (described in Item 2 below) as a starting point for your own data and proposal development. In combination with the video (Item 1) linked below, this should provide a powerful set of tools for you to complete the Proposal successfully on your first submission.
 
+## NEW ITEM!
+
+### Item 3: Outline for the Analysis Section
+
+A full outline for the analysis section (appended to the proposal example) is now available to you.
+
+This now includes:
+
+- Dr. Love's R Markdown file called `full-projectA-love.Rmd` and posted to our Shared Google Drive, as well as [to Github at this link](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/example_projectA_proposal/full-projectA-love.Rmd).
+- The HTML result from Dr. Love's work, called `full-projectA-love.html` and posted to our Shared Google Drive, as well as [to Github at this link](https://github.com/THOMASELOVE/431-2020/blob/master/projects/projectA/example_projectA_proposal/full-projectA-love.html).
+- To see the HTML result, we recommend https://rpubs.com/TELOVE/projA-full-431-2020.
+
+## OLD ITEMS!
+
 ### Item 1: 30-Minute Video to Get Started
 
 On 2020-09-17, Dr. Love built a 30-minute video recording walking through the first steps in setting up the data for your project A in R.
@@ -52,6 +66,4 @@ The files associated with this example include:
 - the raw data (also .csv) after removing the top row of the downloaded file
 - two PDFs from County Health Rankings identifying the variables in the data
 
-### Additional items
 
-Coming in October.
