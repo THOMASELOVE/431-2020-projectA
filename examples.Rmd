@@ -14,7 +14,7 @@ Dr. Love has prepared the following materials to help you with your project A wo
 
 The most important recommendation we have is to use the proposal example R Markdown file Dr. Love has prepared (described in Item 2 below) as a starting point for your own data and proposal development. In combination with the video (Item 1) linked below, this should provide a powerful set of tools for you to complete the Proposal successfully on your first submission.
 
-## NEW ITEM!
+## NEW ITEM ADDED 2020-10-08!
 
 ### Item 3: Outline for the Analysis Section
 

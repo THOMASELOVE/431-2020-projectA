@@ -25,9 +25,9 @@ knitr::opts_chunk$set(comment = NA)
     - by **Friday 2020-10-02 at noon**, a "proposal" which requires you to answer a few specific questions after creating a clean data set (a "tibble" with 200-400 rows "counties" and 8 variables.)
         - this will be evaluated quickly by the TAs and Professor Love and you'll redo, as needed, until your proposal is accepted
         - you'll have to tell us at this time whether you are working alone or with another person
-    - by **Tuesday 2020-10-20 at noon**, a final submission consisting of:
+    - by **Tuesday 2020-10-30 at 5 PM**, a final submission consisting of:
         - a report in R Markdown, and knitted to HTML or PDF
-        - a short (3 minute) video which highlights some of your key findings from the report
+        - a short video which highlights some of your key findings from the report
         - a self-evaluation Google Form
 - **The Data**: You will be working with data from the 2020 edition of County Health Rankings. 
     - These data describe most counties in the United States. Counties are located within states in the US. There are 88 counties, for instance, in Ohio.

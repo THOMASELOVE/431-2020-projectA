@@ -16,7 +16,7 @@ navbar:
           href: proposal.html
         - text: "Proposal Checklist"
           href: checklist.html
-        - text: "Final Submission (due 10-20)"
+        - text: "Final Submission (due 10-30)"
           href: final.html
     - text: "Examples"
       href: examples.html
