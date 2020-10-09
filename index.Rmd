@@ -28,7 +28,7 @@ knitr::opts_chunk$set(comment = NA)
     - by **Friday 2020-10-30 at 5 PM**, a final submission consisting of:
         - a report in R Markdown, and knitted to HTML or PDF
         - a short video which highlights some of your key findings from the report
-        - a self-evaluation Google Form
+        - a self-evaluation Google Form, which you'll complete after submitting the report and video
 - **The Data**: You will be working with data from the 2020 edition of County Health Rankings. 
     - These data describe most counties in the United States. Counties are located within states in the US. There are 88 counties, for instance, in Ohio.
     - The data are available now in a .csv format, and also have two codebooks available.
