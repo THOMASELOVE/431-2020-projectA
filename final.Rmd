@@ -20,11 +20,9 @@ knitr::opts_chunk$set(comment = NA)
     - The video must stand on its own, in the sense that it must be completely understandable to someone who has not read your report, but who is generally familiar with County Health Rankings and its measurements. You need to tell us everything we need to know to evaluate your claims, and no more.
 
 3. **The Self-Evaluation** Once you have submitted the other two elements of your project, you will each (whether working alone or with a partner) submit a brief self-evaluation via the Google Form located at http://bit.ly/431-2020-projectA-self-evaluation. The form should take about 10 minutes to complete.
-
-If you're curious, the form asks you to address multiple issues related to the Project in multiple-choice questions. There are also two little essays that we'll ask for, which should be written independently from your partner (if you have one). Specifically, on the form, we will ask you to: 
-
-- summarize the key finding of your Project A study in your own well-chosen words (where your response should be in the neighborhood of 75 words, describing one key finding, which might come from any of your three analyses.) 
-- tell us what the most important piece of advice is that you wished you'd heard when you began Project A (and we'd like at least 25 words here).
+    - If you're curious, the form asks you to address multiple issues related to the Project in multiple-choice questions. There are also two little essays that we'll ask for, which should be written independently from your partner (if you have one).
+        - You will summarize the key finding of your Project A study in your own well-chosen words (where your response should be in the neighborhood of 75 words, describing one key finding, which might come from any of your three analyses.) 
+        - Also, you will tell us what the most important piece of advice is that you wished you'd heard when you began Project A (and we'd like at least 25 words here).
 
 All three elements are due on Friday **2020-10-30 at 5 PM**. Note the changed deadline.
 
@@ -36,7 +34,7 @@ All three elements are due on Friday **2020-10-30 at 5 PM**. Note the changed de
     - The most important parts of the Report are accurate (and effectively presented) data development, accurate (and effectively presented) analyses, and the appropriateness of your research questions and your responses to them in light of your analyses.
 - The Video is worth 25 points. It is unlikely that anyone will score above 23 points, which is the planned score for a very strong presentation, which is clear to see and hear and which is effective. Most scores will likely fall between 16 and 22 points on this element.
     - All videos should include a clear statement of the research questions for any analyses presented, and justify the responses to those questions with results from the analyses.
-- The Self-Evaluation is worth 10 points. Most people who complete the self-evaluation thoughtfully will receive the full 10 points.
+- The Self-Evaluation is worth 10 points. People who complete each question on the self-evaluation thoughtfully and on time will receive the full 10 points.
 
 Overall, a project score of 85 or higher is regarded as an A, and a score of 70 to 84 is regarded as a B. Project grading is set up to generate a median score near 84.
 
