@@ -2,7 +2,7 @@
 title: "431 Project A Instructions"
 ---
 
-This page was last updated: 2020-10-08 22:04:30.
+This page was last updated: 2020-10-08 22:18:33.
 
 
 
@@ -19,7 +19,7 @@ This page was last updated: 2020-10-08 22:04:30.
 
 3. **The Self-Evaluation** You will each (whether working alone or with a partner) submit a brief self-evaluation via a Google Form Dr. Love will make available before 2020-10-16. The form should take about 10 minutes to complete.
 
-All three elements are due on **2020-10-30 at 5 PM**. Note the changed deadline.
+All three elements are due on Friday **2020-10-30 at 5 PM**. Note the changed deadline.
 
 ### Grading
 
