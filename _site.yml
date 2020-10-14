@@ -22,7 +22,7 @@ navbar:
       menu: 
         - text: "Outline, Template, Videos"
           href: examples.html
-        - text: "Summarizing the Proposals"
+        - text: "Tips and Proposal Summary"
           href: prop_summary.html
   right:
     - text: "Contact Us"
