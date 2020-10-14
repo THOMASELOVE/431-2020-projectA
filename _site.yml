@@ -19,7 +19,11 @@ navbar:
         - text: "Final Submission (due 10-30)"
           href: final.html
     - text: "Examples"
-      href: examples.html
+      menu: 
+        - text: "Outline, Template, Videos"
+          href: examples.html
+        - text: "Summarizing the Proposals"
+          href: prop_summary.html
   right:
     - text: "Contact Us"
       href: https://thomaselove.github.io/431/contact.html

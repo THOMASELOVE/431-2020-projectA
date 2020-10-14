@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Project A Summary based on the Proposals</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">431 Project A</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="data.html">Data</a>
+</li>
+<li>
+  <a href="analyses.html">Analyses</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Your Tasks
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="proposal.html">The Proposal (due 10-02)</a>
+    </li>
+    <li>
+      <a href="checklist.html">Proposal Checklist</a>
+    </li>
+    <li>
+      <a href="final.html">Final Submission (due 10-30)</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Examples
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="examples.html">Outline, Template, Videos</a>
+    </li>
+    <li>
+      <a href="prop_summary.html">Summarizing the Proposals</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://thomaselove.github.io/431/contact.html">Contact Us</a>
+</li>
+<li>
+  <a href="https://thomaselove.github.io/431/">431 Homepage</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Project A Summary based on the Proposals</h1>
+
+</div>
+
+
+<p>This page was last updated: 2020-10-14 14:22:59.</p>
+<div id="states-selected" class="section level1">
+<h1>States Selected</h1>
+<p>We have 55 projects.</p>
+<ul>
+<li>26 projects use four states, 18 use 5 states, and 11 use 6 states.</li>
+<li>In total, we have 260 “states” in use.</li>
+<li>The states which we “permitted” you to use that no one chose were:
+<ul>
+<li>Kansas (104 counties), Kentucky (120), North Dakota (48), Nebraska (80) and Oklahoma (77).</li>
+</ul></li>
+<li>States (and DC) you were not permitted to use (because they have &lt; 12 counties) were:
+<ul>
+<li>Connecticut (8 counties), Delaware (3), Hawaii (4), New Hampshire (10), Rhode Island (5) and Washington DC (1).</li>
+</ul></li>
+<li>Identical states were chosen by two different groups in two cases…
+<ul>
+<li>Two projects use Ohio, Indiana, Michigan and Pennsylvania (330 counties, 4 states)</li>
+<li>Two projects use Ohio, Illinois, Indiana and Michigan (365 counties, 4 states)</li>
+</ul></li>
+</ul>
+<p>Here’s a graph of the states used at least once, excluding Ohio, which was used in all 55 projects:</p>
+<p><img src="prop_summary_files/figure-html/unnamed-chunk-1-1.png" width="480" /></p>
+</div>
+<div id="variables-selected" class="section level1">
+<h1>Variables Selected</h1>
+<p>No two projects selected the same five variables.</p>
+<div id="most-common-selections" class="section level2">
+<h2>Most Common Selections</h2>
+<p>Teams selected 56 of the 107 possible variables.</p>
+<ul>
+<li>The most common variable selected was <code>v063</code> (Median household income), selected in 23 of the 55 projects, but only once as an outcome.</li>
+<li><code>v023</code> (Unemployment) is used in 14 projects (but never as the outcome)</li>
+<li><code>v009</code> (Adult smoking) is used in 13 (only 2 times as the outcome)</li>
+<li><code>v147</code> (Life expectancy) is also used in 13 (12 times as the outcome)</li>
+<li><code>v042</code> (Poor mental health days) is used in 12 (6 times as the outcome)</li>
+<li><code>v085</code> (Uninsured) is used in 10 (once as the outcome)</li>
+<li>Other common choices included:
+<ul>
+<li><code>v011</code> (Adult obesity), <code>v139</code> (Food insecurity), <code>v143</code> (Insufficient sleep) and <code>v145</code> (Frequent mental distress) were each used in 9 projects,</li>
+<li><code>v021</code> (High school graduation), <code>v044</code> (Income inequality), <code>v049</code> (Excessive drinking) and <code>v070</code> (Physical inactivity) were each used in 8 projects,</li>
+<li><code>v001</code> (Premature death), <code>v062</code> (Mental health providers) and <code>v069</code> (Some college) were each used in 7</li>
+<li><code>v037</code> (Low birthweight), <code>v161</code> (Suicides) were each used in 6</li>
+<li><code>v002</code> (Poor or fair health), <code>v014</code> (Teen births), and <code>v043</code> (Violent crime) were each used in 5 projects</li>
+</ul></li>
+</ul>
+</div>
+<div id="outcome" class="section level2">
+<h2>Outcome</h2>
+<ul>
+<li>12 of 55 projects selected <code>v147</code> (Life expectancy) as their outcome</li>
+<li>6 more selected <code>v001</code> (Premature death), and 6 also selected <code>v042</code> (Poor mental health days)</li>
+<li>5 selected <code>v161</code> (Suicides)</li>
+<li>4 selected <code>v037</code> (Low birthweight)</li>
+<li>3 selected <code>v127</code> (Premature age-adjusted mortality)</li>
+<li>2 selected <code>v002</code> (Poor or fair health), <code>v009</code> (Adult smoking), <code>v043</code> (Violent crime), and <code>v060</code> (Diabetes prevalence)</li>
+<li>while the other 11 projects used something no one else did.</li>
+</ul>
+</div>
+<div id="most-common-quantitative-predictors" class="section level2">
+<h2>Most Common Quantitative Predictors</h2>
+<ul>
+<li>10 projects used <code>v063</code> (Median household income)</li>
+<li>7 projects used <code>v049</code> (Excessive drinking)</li>
+<li>6 projects used <code>v085</code> (Uninsured) and 6 used <code>v145</code> (Frequent mental distress)</li>
+<li>5 projects used <code>v009</code> (Adult smoking), <code>v021</code> (High school graduation), <code>v023</code> (Unemployment), <code>v139</code> (Food insecurity) and <code>v143</code> (Insufficient sleep)</li>
+</ul>
+</div>
+<div id="most-common-binary-predictors" class="section level2">
+<h2>Most Common Binary Predictors</h2>
+<ul>
+<li>7 of 55 projects selected <code>v023</code> (Unemployment) to use for a binary categorical predictor</li>
+<li>5 used <code>v063</code> (Median household income)</li>
+<li>4 used <code>v009</code> (Adult smoking) and 4 used <code>v011</code> (Adult obesity)</li>
+</ul>
+</div>
+<div id="most-common-multi-categorical-predictors" class="section level2">
+<h2>Most Common Multi-Categorical Predictors</h2>
+<p>36 projects split into 3 categories, 10 into 4 and just 9 into 5.</p>
+<ul>
+<li>7 of 55 projects chose <code>v063</code> (Median household income)</li>
+<li>3 used <code>v043</code> (Violent crime), <code>v069</code> (Some college), <code>v139</code> (Food insecurity) and 3 used <code>v145</code> (Frequent mental distress)</li>
+</ul>
+</div>
+</div>
+<div id="titles-of-your-55-projects" class="section level1">
+<h1>Titles of Your 55 Projects</h1>
+<p>My favorite title at the moment of these 55 is bolded. Tomorrow, I’ll probably like one of the other ones better.</p>
+<p>If you’re considering a revision to your title, especially after you’ve completed the analyses and have something more substantial to say, I encourage you to think about whether you need words that appear many times in the other titles here, or whether there’s a more effective way to entice your audience and stand out.</p>
+<ol style="list-style-type: decimal">
+<li>A Look into Ohio, Louisiana, Florida, and Vermont</li>
+<li>An Exploration of the County Heath Rankings Data</li>
+<li>Analysis of Adverse Mental Health Outcomes as a Reflection of Access to Mental Health Providers</li>
+<li>Analysis of County-Level Health Indicators in Five US States</li>
+<li>Analysis Of Math Test Scores in the U.S.</li>
+<li>Analyzing the Factors for Premature Death</li>
+<li>Assessing Poor Mental Health Days</li>
+<li>Assessment and Comparing Suicidal Risk Factors in Ohio and Three Other States</li>
+<li>Association of Air pollution with Poor Health Outcomes in Five States in the Great Lakes Region</li>
+<li>Behavioral factors and their link with a life expectancy</li>
+<li>Building a Predictive Model for Mental Health in Counties</li>
+<li>CHR Data for Estimation of Birth Weight Outcomes</li>
+<li><strong>Contributors to Violent Crime in 2020 U.S. Presidential Election Swing States</strong></li>
+<li>Diabetes Prevalence in the 2020 County Health Rankings</li>
+<li>Effect of Health Factors of a 20-Something Millenial on Life Expectancy</li>
+<li>Examining factors potentially affecting low birthweight rates in six states</li>
+<li>Exploration of Association of Social &amp; Economic Factors with Health Behaviors in OH, CA, GA, SD and NJ</li>
+<li>Exploration of factors potentially associated with premature death among the top ranked states for premature deaths plus Ohio</li>
+<li>Exploring Life Expectancy in Midwestern US Counties</li>
+<li>Factors Associated with Adult Smoking Prevalence in Four US States</li>
+<li>Factors associated with violent crime across counties in OH, CA, CO, TN, &amp; PA</li>
+<li>Factors Contributing to Physical Inactivity</li>
+<li>Five State Analysis of Premature Death Associations Using Community Health Rankings Data</li>
+<li>Health Outcomes in the 2020 Presidential Race Battleground States</li>
+<li>Health Status of Four US States</li>
+<li>Impact of Health Factors on Life Expectancy in Rust Belt States</li>
+<li>Impact of Public Health Factors on Low Birthweight</li>
+<li>Influences on Life Expectancy in Counties in OH, NY, NJ, and CO</li>
+<li>Interrogation health behaviors and life expectancy relationship: evidence from four census region state candidates</li>
+<li>Investigating Poor Mental Health Days in Select Rust Belt States</li>
+<li>Modeling Preventable Hospitalization Rates at the County Level</li>
+<li>Physical and Mental Health in the US</li>
+<li>Poor Health May be Linked to Living in Disadvantaged Areas</li>
+<li>Poor mental health: Predictors and Outcomes</li>
+<li>Predicting Adult Obesity Rate in US Counties</li>
+<li>Predicting adult smoking rates using mental, physical, and financial stress</li>
+<li>Predicting Income Levels in Counties in the Midwest with Indicators of Community Wellness</li>
+<li>Predicting life expectancy from health and social indicators</li>
+<li>Predictors of Access to Mental Health Care in Counties in Six U.S. States</li>
+<li>Predictors of health outcomes across counties in OH, MN, WA, and UT</li>
+<li>Predictors of Life Expectancy</li>
+<li>Predictors of poor perinatal outcomes in the American Midwest</li>
+<li>Premature death rates analysis in four US states</li>
+<li>Premature mortality across US states</li>
+<li>Quality of Life and Premature Death</li>
+<li>Relationship between County Life Expectancy and Health Behaviors</li>
+<li>Sleep Duration, Motor Vehicle Deaths, Household Income and the Relation to Suicide in Five States</li>
+<li>Socio-Economic Barriers Limit Access to Appropriate Health Care Coverage</li>
+<li>Socioeconomic and Lifestyle Factors in Suicide Rates</li>
+<li>Studying Life Expectancy as a Measure of Health Outcomes in 6 Representative States and Their Counties in the United States</li>
+<li>The Association Between Dietary and Physical Health Behaviors, Socioeconomic Status and Life Expectancy Among 5 US States</li>
+<li>The effect of Socio-economic factors and Health Behaviors on Life Expectancy across 5 States</li>
+<li>The impact of various health and social factors in diabetes prevalence</li>
+<li>The Relationship Between Measures of Despair and Premature Death in Midwestern States</li>
+<li>What factors contribute to Suicide Rate</li>
+</ol>
+</div>
+
+<p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
+</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
