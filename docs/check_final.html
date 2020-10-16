@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Final Report Checklist</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">431 Project A</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="data.html">Data</a>
+</li>
+<li>
+  <a href="analyses.html">Analyses</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Your Tasks
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="proposal.html">The Proposal (due 10-02)</a>
+    </li>
+    <li>
+      <a href="checklist.html">Proposal Checklist</a>
+    </li>
+    <li>
+      <a href="final.html">Final Submission (due 10-30)</a>
+    </li>
+    <li>
+      <a href="check_final.html">Final Checklist</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Examples
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="examples.html">Outline, Template, Videos</a>
+    </li>
+    <li>
+      <a href="prop_summary.html">Tips and Proposal Summary</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://thomaselove.github.io/431/contact.html">Contact Us</a>
+</li>
+<li>
+  <a href="https://thomaselove.github.io/431/">431 Homepage</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Final Report Checklist</h1>
+
+</div>
+
+
+<p>This page was last updated: 2020-10-16 15:34:27.</p>
+<div id="about-40-things-that-students-should-check-in-their-project-a-report" class="section level1">
+<h1>(About) 40 Things That Students Should Check in Their Project A Report</h1>
+<p>This list is not comprehensive. These aren’t the only things that Dr. Love and the TAs will be checking, and we won’t necessarily check all of them in every project. Although the project report is worth 40 points and there are about 40 items here, there is no 1:1 correspondence between your grade (which is determined holistically) and the elements on this checklist. It is fair to say that your report will receive a better grade if these elements are complete.</p>
+<ol style="list-style-type: decimal">
+<li>The date of the project is automatically generated by R Markdown in the YAML using <strong>r Sys.Date()</strong> and appears in the format 2020-10-30 in the HTML.</li>
+<li>The name(s) of the author(s) are clearly listed in the YAML and in the HTML.</li>
+<li>Neither <strong>warning = FALSE</strong> nor <strong>include = FALSE</strong> nor <strong>eval = FALSE</strong> is used anywhere in the project, other than in the initial setup prior to package loading.</li>
+<li>All packages are loaded near the top of the document (as opposed to partway through) and <strong>echo = FALSE</strong> is used to suppress the messages created when loading packages.</li>
+<li>Code-folding should be used, with this set to <strong>code_folding: show</strong> so that the code is visible (by default) in the HTML.</li>
+<li>The option comment = NA is used in the R Markdown file - usually with <strong>knitr::opts_chunk$set(comment = NA)</strong> - to ensure that R results in the HTML are not preceded with ##.</li>
+<li>There are no warnings in the HTML document.</li>
+<li>The project uses <strong>read_csv</strong> to read in the data, and <strong>echo = FALSE</strong> is used to suppress the message about column specifications there.</li>
+<li><strong>echo = FALSE</strong> is also used to suppress the message created when running something from the mosaic package (usually favstats) for the first time.</li>
+<li>The headings and subheadings (so things like 1 and 1.1) of the entire Project A document are numbered, appear in the table of contents, and contain no misspelled words.</li>
+<li>The headings and first-level subheadings in the outline for Project A Analyses 1, 2, and 3 are used as they are shown in <a href="examples.html">my outline</a> (see sections 4-6.)</li>
+<li>Professor Love’s instructions contained in the outline are NOT repeated in your HTML.</li>
+<li>The function <strong>summary()</strong> as applied to a tibble does not appear in your HTML.</li>
+<li>The raw data is not printed or summarized or listed in your HTML.</li>
+<li>The tibble is printed in its final form after Data Development and before Analyses.</li>
+<li>The final tibble is saved to an Rds file before the Analyses and that file to which it is saved contains only letters and numbers and in particular no spaces in its name. You are not required to submit the .Rds file to Canvas, but we would appreciate it.</li>
+<li>The <strong>Hmisc::describe</strong> results include all rows shown in the printed tibble, and the variable names shown there match those shown in the codebook and then used in the three Analyses (unless a transformation is used.)</li>
+<li>There are no avoidable scrolling windows in the HTML document. Avoidable scrolling windows are those fixed by hitting ENTER more often in writing R code.</li>
+<li>The count of counties in the proposal task 1 response matches the count of counties who reported data to CHR from the selected states, and the number of rows in the printed tibble.</li>
+<li>The variable described in the codebook as the outcome is actually used as the outcome (perhaps after a transformation) in Analyses 1, 2 and 3.</li>
+<li>The project demonstrates that all five variables of interest have been cleaned in accordance with the <a href="prop_summary.html">instructions specified here</a> ( for example, proportions are presented/interpreted as percentages.)</li>
+<li>Analyses 1, 2, and 3 are done on complete cases for the relevant variables, and the number of rows used in each Analysis matches up with the previously described county counts, less the counties with missing values on the variables used in that analysis.</li>
+<li>The three main functions from the broom package: tidy, glance and augment are used appropriately in the Analyses.</li>
+<li>The predictor used in Analysis 1 was identified as a quantitative predictor in the codebook, or in the description of predictors following the codebook.</li>
+<li>The predictor used in Analysis 2 was created as a categorical predictor correctly in the data development section, using the number of levels and names for those levels that are used in Analysis 2.</li>
+<li>The order of levels for the predictor in Analysis 2 is appropriate (for binary predictors, any order is fine if it is clear, for an ordered multi-category variable, the order matters.)</li>
+<li>The categorical predictor in Analysis 2 shows the same levels as are specified in the codebook, and in the description of predictors following the codebook.</li>
+<li>If a multi-categorical predictor is used in Analysis 2, it is included as a factor. (If a binary predictor is used, then either a 1-0 or factor representation is OK.)</li>
+<li>The choice of baseline category for the predictor in Analysis 2 is explicitly stated in the description of Analysis 2 variables and matches what the analysis actually generates.</li>
+<li>Ohio is chosen as the baseline state for Analysis 3.</li>
+<li>The quantitative predictor in Analysis 3 was identified as a quantitative predictor in the codebook, or in the description of predictors following the codebook.</li>
+<li>In Analysis 1, there is a plot to compare the data without a transformation to the data with the chosen (or best alternative) transformation.</li>
+<li>Transformation decisions are motivated by patterns shown in the visualizations, without reference to numerical summaries like R-square that are inappropriate for that task.</li>
+<li>For each of the three Analyses, the research question is stated clearly, is grammatically correct, and ends with a question mark.</li>
+<li>For each of the three Analyses, a clearly written answer to the research question is provided in the first paragraph of the Conclusions section, and is motivated by the analysis you did in a clear way. This is followed by a second paragraph that describes meaningful limitations of that Analysis. (Note that it’s not a good idea to suggest limitations that you could fix with the tools you have - instead, apply those tools and build a better Analysis.)</li>
+<li>The project title contains no misspelled words and reflects what is actually studied in the Analyses (or at least in one of the Analyses.)</li>
+<li>Your residual analysis / prediction analysis includes all things required in the outline, which includes but is not limited to:
+<ul>
+<li>An appropriate set of residual plots (for Analyses 1 and 3) or plot (for Analysis 2) with a summary description of your conclusions in complete sentences.</li>
+<li>Your model’s predictions for Cuyahoga County, OH and a comparison of that prediction to the observed value for that county on the original scale.</li>
+<li>Identification of two counties (by name and state) where the model is least successful at predicting the outcome.</li>
+</ul></li>
+<li>If the outcome is transformed, then all of the following are true.
+<ul>
+<li>The coefficients of the regression model are interpreted correctly in terms of the transformed outcome. If both the outcome and a predictor are transformed, the interpretation of the relevant coefficient estimates describes change in the transformed outcome as a function of a change in the transformed predictor.</li>
+<li>The project describes what is being predicted as, for example, the log of (outcome as measured in units) rather than attributing units directly to log(outcome).</li>
+<li>When the model is used to predict the outcome for individual counties, this includes back-conversion to the original outcome scale.</li>
+<li>In Analysis 1, when you specify the Pearson correlation, that should be the correlation after transformation(s) so that the R-squared value reported for your model is the square of the Pearson correlation you report.</li>
+<li>If the outcome is transformed in Analysis 1, the same transformation is used in Analyses 2 and 3.</li>
+</ul></li>
+<li>The session information is printed, in a section or subsection of its own that appears in the Table of Contents and is the last part of the document.</li>
+<li>We prefer that you submit Rmd and HTML files, rather than Rmd and PDF files to Canvas. If you are working with a partner, one of you submits the Rmd, HTML and video files, and the other partner submits a one-page note stating who their partner is and that their partner will submit the materials for their project team. Everyone (including both members of each team) should fill out <a href="http://bit.ly/431-2020-projectA-self-evaluation">the self-evaluation form</a> after the Rmd, HTML and video files are posted to Canvas.</li>
+</ol>
+<p>Good luck!</p>
+</div>
+
+<p><img alt="431 Footer" style="border-width:10" src="431_foot2.PNG" height="200" width ="800"/></a> 
+</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

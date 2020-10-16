@@ -18,6 +18,8 @@ navbar:
           href: checklist.html
         - text: "Final Submission (due 10-30)"
           href: final.html
+        - text: "Final Checklist"
+          href: check_final.html
     - text: "Examples"
       menu: 
         - text: "Outline, Template, Videos"
