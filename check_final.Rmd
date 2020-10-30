@@ -16,8 +16,8 @@ This list is not comprehensive. These aren't the only things that Dr. Love and t
 5. Code-folding should be used, with this set to **code_folding: show** so that the code is visible (by default) in the HTML.
 6. The option comment = NA is used in the R Markdown file - usually with **knitr::opts_chunk$set(comment = NA)** - to ensure that R results in the HTML are not preceded with ##.
 7. There are no warnings in the HTML document.
-8. The project uses **read_csv** to read in the data, and **echo = FALSE** is used to suppress the message about column specifications there.
-9. **echo = FALSE** is also used to suppress the message created when running something from the mosaic package (usually favstats) for the first time.
+8. The project uses **read_csv** to read in the data, and **message = FALSE** is used to suppress the message about column specifications there.
+9. **message = FALSE** is also used to suppress the message created when running something from the mosaic package (usually favstats) for the first time.
 10. The headings and subheadings (so things like 1 and 1.1) of the entire Project A document are numbered, appear in the table of contents, and contain no misspelled words.
 11. The headings and first-level subheadings in the outline for Project A Analyses 1, 2, and 3 are used as they are shown in [my outline](examples.html) (see sections 4-6.)
 12. Professor Love's instructions contained in the outline are NOT repeated in your HTML.
